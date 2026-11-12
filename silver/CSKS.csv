@@ -1,0 +1,26 @@
+KOKRS,KOSTL,DATBI,DATAB,BUKRS,KOSAR,VERAK,KTEXT,LTEXT,is_open_ended
+NV00,0000011010,9999-12-31,2019-01-01,1000,V,M. Puig,Administration,Administration,True
+NV00,0000011020,9999-12-31,2019-01-01,1000,V,L. Romero,Finance,Finance,True
+NV00,0000011030,9999-12-31,2019-01-01,1000,H,A. Serra,IT,IT,True
+NV00,0000011040,9999-12-31,2019-01-01,1000,W,C. Vidal,Marketing,Marketing,True
+NV00,0000011050,9999-12-31,2019-01-01,1000,W,J. Ortega,Sales,Sales,True
+NV00,0000011060,9999-12-31,2019-01-01,1000,H,P. Navarro,Logistics,Logistics,True
+NV00,0000011070,9999-12-31,2019-01-01,1000,W,R. Font,Store Barcelona Diag,Store Barcelona Diagonal,True
+NV00,0000011080,2025-06-30,2019-01-01,1000,W,S. Gil,Store Valencia Centr,Store Valencia Centro,False
+NV00,0000021010,9999-12-31,2019-01-01,2000,V,K. Miller,Administration,Administration,True
+NV00,0000021020,9999-12-31,2019-01-01,2000,V,D. Brown,Finance,Finance,True
+NV00,0000021030,9999-12-31,2019-01-01,2000,H,T. Nguyen,IT,IT,True
+NV00,0000021040,9999-12-31,2019-01-01,2000,W,E. Wilson,Marketing,Marketing,True
+NV00,0000021050,9999-12-31,2019-01-01,2000,W,B. Clark,Sales,Sales,True
+NV00,0000021060,9999-12-31,2019-01-01,2000,H,H. Patel,Logistics,Logistics,True
+NV00,0000021070,9999-12-31,2019-01-01,2000,W,G. Lewis,Store Chicago Loop,Store Chicago Loop,True
+NV00,0000021080,9999-12-31,2019-01-01,2000,W,N. Davis,Store Austin Domain,Store Austin Domain,True
+NV00,0000031010,9999-12-31,2019-01-01,3000,V,O. Hughes,Administration,Administration,True
+NV00,0000031020,9999-12-31,2019-01-01,3000,V,F. Evans,Finance,Finance,True
+NV00,0000031030,9999-12-31,2019-01-01,3000,H,I. Walsh,IT,IT,True
+NV00,0000031040,9999-12-31,2019-01-01,3000,W,W. Price,Marketing,Marketing,True
+NV00,0000031050,9999-12-31,2019-01-01,3000,W,Y. Shah,Sales,Sales,True
+NV00,0000031060,9999-12-31,2019-01-01,3000,H,L. Barker,Logistics,Logistics,True
+NV00,0000031070,9999-12-31,2019-01-01,3000,W,C. Moore,Store Manchester Arn,Store Manchester Arndale,True
+NV00,0000031080,9999-12-31,2019-01-01,3000,W,R. Kelly,Store Leeds Trinity,Store Leeds Trinity,True
+NV00,0000011090,9999-12-31,2025-07-01,1000,W,M. Puig,Store Valencia Ruzafa,Store Valencia Ruzafa,True

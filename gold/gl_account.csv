@@ -1,0 +1,28 @@
+account_number,chart_of_accounts_code,account_group,account_class,created_on,entered_by,name_en,name_es,short_name_en,short_name_es
+0000100000,NVCA,SAKO,BalanceSheetAccount,2019-03-15T00:00:00,MIGRATION,Petty cash,Caja,Petty cash,Caja
+0000113100,NVCA,SAKO,BalanceSheetAccount,2019-03-15T00:00:00,MIGRATION,Bank - main account,Banco - cuenta principal,Bank - main account,Banco - cuenta princ
+0000140000,NVCA,SAKO,BalanceSheetAccount,2019-03-15T00:00:00,MIGRATION,Trade receivables,Clientes,Trade receivables,Clientes
+0000154000,NVCA,SAKO,BalanceSheetAccount,2019-03-15T00:00:00,MIGRATION,Input VAT,IVA soportado,Input VAT,IVA soportado
+0000160000,NVCA,SAKO,BalanceSheetAccount,2019-03-15T00:00:00,MIGRATION,Trade payables,Proveedores,Trade payables,Proveedores
+0000175000,NVCA,SAKO,BalanceSheetAccount,2019-03-15T00:00:00,MIGRATION,Output VAT,IVA repercutido,Output VAT,IVA repercutido
+0000200000,NVCA,SAKO,BalanceSheetAccount,2019-03-15T00:00:00,MIGRATION,Fixed assets - equipment,Inmovilizado - equipos,Fixed assets - equip,Inmovilizado - equip
+0000210000,NVCA,SAKO,BalanceSheetAccount,2019-03-15T00:00:00,MIGRATION,Accumulated depreciation,Amortización acumulada,Accumulated deprecia,Amortización acumula
+0000230000,NVCA,SAKO,BalanceSheetAccount,2019-03-15T00:00:00,MIGRATION,Payroll payable,Remuneraciones pendientes de pago,Payroll payable,Remuneraciones pendi
+0000290000,NVCA,SAKO,BalanceSheetAccount,2019-03-15T00:00:00,MIGRATION,Retained earnings,Resultados acumulados,Retained earnings,Resultados acumulado
+0000400000,NVCA,ERGB,ProfitAndLossAccount,2019-03-15T00:00:00,MIGRATION,Cost of goods sold,Coste de ventas,Cost of goods sold,Coste de ventas
+0000410000,NVCA,ERGB,ProfitAndLossAccount,2019-03-15T00:00:00,MIGRATION,Salaries and wages,Sueldos y salarios,Salaries and wages,Sueldos y salarios
+0000411000,NVCA,ERGB,ProfitAndLossAccount,2019-03-15T00:00:00,MIGRATION,Social security,Seguridad social,Social security,Seguridad social
+0000420000,NVCA,ERGB,ProfitAndLossAccount,2019-03-15T00:00:00,MIGRATION,Rent,Arrendamientos,Rent,Arrendamientos
+0000421000,NVCA,ERGB,ProfitAndLossAccount,2019-03-15T00:00:00,MIGRATION,Utilities,Suministros,Utilities,Suministros
+0000430000,NVCA,ERGB,ProfitAndLossAccount,2019-03-15T00:00:00,MIGRATION,IT services,Servicios informáticos,IT services,Servicios informátic
+0000431000,NVCA,ERGB,ProfitAndLossAccount,2019-03-15T00:00:00,MIGRATION,Consulting fees,Honorarios de consultoría,Consulting fees,Honorarios de consul
+0000440000,NVCA,ERGB,ProfitAndLossAccount,2019-03-15T00:00:00,MIGRATION,Travel expenses,Gastos de viaje,Travel expenses,Gastos de viaje
+0000441000,NVCA,ERGB,ProfitAndLossAccount,2019-03-15T00:00:00,MIGRATION,Marketing,Marketing y publicidad,Marketing,Marketing y publicid
+0000450000,NVCA,ERGB,ProfitAndLossAccount,2019-03-15T00:00:00,MIGRATION,Depreciation expense,Gasto por amortización,Depreciation expense,Gasto por amortizaci
+0000460000,NVCA,ERGB,ProfitAndLossAccount,2019-03-15T00:00:00,MIGRATION,Bank fees,Comisiones bancarias,Bank fees,Comisiones bancarias
+0000470000,NVCA,ERGB,ProfitAndLossAccount,2019-03-15T00:00:00,MIGRATION,Office supplies,Material de oficina,Office supplies,Material de oficina
+0000480000,NVCA,ERGB,ProfitAndLossAccount,2019-03-15T00:00:00,MIGRATION,FX gains,Diferencias positivas de cambio,FX gains,Diferencias positiva
+0000481000,NVCA,ERGB,ProfitAndLossAccount,2019-03-15T00:00:00,MIGRATION,FX losses,Diferencias negativas de cambio,FX losses,Diferencias negativa
+0000499000,NVCA,ERGB,ProfitAndLossAccount,2019-03-15T00:00:00,MIGRATION,Miscellaneous expense,,Miscellaneous expens,
+0000800000,NVCA,ERGB,ProfitAndLossAccount,2019-03-15T00:00:00,MIGRATION,Revenue - goods,Ventas de mercaderías,Revenue - goods,Ventas de mercadería
+0000800100,NVCA,ERGB,ProfitAndLossAccount,2019-03-15T00:00:00,MIGRATION,Revenue - services,Prestación de servicios,Revenue - services,Prestación de servic

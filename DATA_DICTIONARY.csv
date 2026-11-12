@@ -1,0 +1,98 @@
+table,table_description,position,field,business_name,description,datatype,is_primary_key
+T001,Company codes,1,BUKRS,Company code,Company code,string,Y
+T001,Company codes,2,BUTXT,Company name,Company name,string,N
+T001,Company codes,3,ORT01,City,City,string,N
+T001,Company codes,4,LAND1,Country,Country,string,N
+T001,Company codes,5,WAERS,Currency,Local currency,string,N
+T001,Company codes,6,SPRAS,Language,Language,string,N
+T001,Company codes,7,KTOPL,Chart of accounts,Chart of accounts,string,N
+T001,Company codes,8,PERIV,Fiscal year variant,Fiscal year variant (K4 = calendar year),string,N
+SKA1,G/L accounts (chart of accounts),1,KTOPL,Chart of accounts,Chart of accounts,string,Y
+SKA1,G/L accounts (chart of accounts),2,SAKNR,G/L account number,G/L account number,string,Y
+SKA1,G/L accounts (chart of accounts),3,KTOKS,G/L account group,G/L account group,string,N
+SKA1,G/L accounts (chart of accounts),4,XBILK,Balance sheet account flag,X = balance sheet account,string,N
+SKA1,G/L accounts (chart of accounts),5,GVTYP,P&L account flag,X = profit and loss account,string,N
+SKA1,G/L accounts (chart of accounts),6,ERDAT,Created on,Created on,date (YYYYMMDD),N
+SKA1,G/L accounts (chart of accounts),7,ERNAM,Created by,Created by,string,N
+SKAT,G/L account texts,1,SPRAS,Language,Language,string,Y
+SKAT,G/L account texts,2,KTOPL,Chart of accounts,Chart of accounts,string,Y
+SKAT,G/L account texts,3,SAKNR,G/L account number,G/L account number,string,Y
+SKAT,G/L account texts,4,TXT20,Short text,Short text,string,N
+SKAT,G/L account texts,5,TXT50,Long text,Long text,string,N
+SKB1,G/L accounts (company code),1,BUKRS,Company code,Company code,string,Y
+SKB1,G/L accounts (company code),2,SAKNR,G/L account number,G/L account number,string,Y
+SKB1,G/L accounts (company code),3,WAERS,Currency,Account currency,string,N
+SKB1,G/L accounts (company code),4,MITKZ,Reconciliation account type,"Reconciliation account type: D = customers, K = vendors",string,N
+SKB1,G/L accounts (company code),5,XOPVW,Open item management flag,X = open item management,string,N
+SKB1,G/L accounts (company code),6,FSTAG,Field status group,Field status group (G004 = cost center required),string,N
+SKB1,G/L accounts (company code),7,XKRES,Line item display flag,X = line item display,string,N
+CSKS,Cost centers,1,KOKRS,Controlling area,Controlling area,string,Y
+CSKS,Cost centers,2,KOSTL,Cost center,Cost center,string,Y
+CSKS,Cost centers,3,DATBI,Valid to,Valid to,date (YYYYMMDD),Y
+CSKS,Cost centers,4,DATAB,Valid from,Valid from,date (YYYYMMDD),N
+CSKS,Cost centers,5,BUKRS,Company code,Company code,string,N
+CSKS,Cost centers,6,KOSAR,Cost center category,"Category: V administration, H service, W sales",string,N
+CSKS,Cost centers,7,VERAK,Person responsible,Person responsible,string,N
+CSKS,Cost centers,8,KTEXT,Short name,Short name,string,N
+CSKS,Cost centers,9,LTEXT,Description,Long name,string,N
+KNA1,Customers,1,KUNNR,Customer number,Customer number,string,Y
+KNA1,Customers,2,NAME1,Name,Name,string,N
+KNA1,Customers,3,LAND1,Country,Country,string,N
+KNA1,Customers,4,ORT01,City,City,string,N
+KNA1,Customers,5,PSTLZ,Postal code,Postal code,string,N
+KNA1,Customers,6,STCD1,Tax ID,Tax ID,string,N
+KNA1,Customers,7,KTOKD,Customer account group,"Account group: KUNA domestic, KUNX foreign, CPD one-time customer",string,N
+KNA1,Customers,8,ERDAT,Created on,Created on,date (YYYYMMDD),N
+KNA1,Customers,9,LOEVM,Deletion flag,X = flagged for deletion,string,N
+KNA1,Customers,10,ZTERM,Payment terms,Payment terms,string,N
+LFA1,Vendors,1,LIFNR,Vendor number,Vendor number,string,Y
+LFA1,Vendors,2,NAME1,Name,Name,string,N
+LFA1,Vendors,3,LAND1,Country,Country,string,N
+LFA1,Vendors,4,ORT01,City,City,string,N
+LFA1,Vendors,5,PSTLZ,Postal code,Postal code,string,N
+LFA1,Vendors,6,STCD1,Tax ID,Tax ID,string,N
+LFA1,Vendors,7,KTOKK,Vendor account group,"Account group: LIEF vendor, EMPL employee (travel expenses)",string,N
+LFA1,Vendors,8,ERDAT,Created on,Created on,date (YYYYMMDD),N
+LFA1,Vendors,9,SPERR,Posting block,Posting block,string,N
+LFA1,Vendors,10,ZTERM,Payment terms,Payment terms,string,N
+T003,Document types,1,BLART,Document type,Document type,string,Y
+T003,Document types,2,LTEXT,Description,Description,string,N
+T003,Document types,3,NUMKR,Number range,Number range,string,N
+TBSL,Posting keys,1,BSCHL,Posting key,Posting key,string,Y
+TBSL,Posting keys,2,SHKZG,Debit/credit indicator,Debit (S) or credit (H),string,N
+TBSL,Posting keys,3,KOART,Account type,"Account type: D customer, K vendor, S G/L account",string,N
+TBSL,Posting keys,4,LTEXT,Description,Description,string,N
+BKPF,Document header,1,BUKRS,Company code,Company code,string,Y
+BKPF,Document header,2,BELNR,Document number,Document number,string,Y
+BKPF,Document header,3,GJAHR,Fiscal year,Fiscal year,string,Y
+BKPF,Document header,4,BLART,Document type,Document type,string,N
+BKPF,Document header,5,BLDAT,Document date,Document date (date of the original invoice),date (YYYYMMDD),N
+BKPF,Document header,6,BUDAT,Posting date,Posting date,date (YYYYMMDD),N
+BKPF,Document header,7,MONAT,Fiscal period,Fiscal period,string,N
+BKPF,Document header,8,CPUDT,Entry date,Entry date in the system,date (YYYYMMDD),N
+BKPF,Document header,9,USNAM,User name,User name,string,N
+BKPF,Document header,10,WAERS,Currency,Document currency,string,N
+BKPF,Document header,11,KURSF,Exchange rate,Exchange rate (document currency → local currency),decimal,N
+BKPF,Document header,12,XBLNR,Reference,Reference (external invoice number or related document),string,N
+BKPF,Document header,13,BKTXT,Header text,Header text,string,N
+BKPF,Document header,14,STBLG,Reversal document,Reversal document,string,N
+BKPF,Document header,15,STJAH,Reversal fiscal year,Reversal fiscal year,string,N
+BSEG,Document line items,1,BUKRS,Company code,Company code,string,Y
+BSEG,Document line items,2,BELNR,Document number,Document number,string,Y
+BSEG,Document line items,3,GJAHR,Fiscal year,Fiscal year,string,Y
+BSEG,Document line items,4,BUZEI,Line item number,Line item number,string,Y
+BSEG,Document line items,5,BSCHL,Posting key,Posting key,string,N
+BSEG,Document line items,6,KOART,Account type,Account type,string,N
+BSEG,Document line items,7,SHKZG,Debit/credit indicator,Debit/credit indicator,string,N
+BSEG,Document line items,8,HKONT,G/L account,G/L account,string,N
+BSEG,Document line items,9,KUNNR,Customer number,Customer,string,N
+BSEG,Document line items,10,LIFNR,Vendor number,Vendor,string,N
+BSEG,Document line items,11,WRBTR,Amount in document currency,Amount in document currency,decimal,N
+BSEG,Document line items,12,DMBTR,Amount in local currency,Amount in local currency,decimal,N
+BSEG,Document line items,13,MWSKZ,Tax code,Tax code,string,N
+BSEG,Document line items,14,KOSTL,Cost center,Cost center,string,N
+BSEG,Document line items,15,ZTERM,Payment terms,Payment terms,string,N
+BSEG,Document line items,16,ZFBDT,Baseline date for payment,Baseline date for due date calculation,date (YYYYMMDD),N
+BSEG,Document line items,17,AUGBL,Clearing document,Clearing document,string,N
+BSEG,Document line items,18,AUGDT,Clearing date,Clearing date,date (YYYYMMDD),N
+BSEG,Document line items,19,SGTXT,Line item text,Line item text,string,N

@@ -1,0 +1,158 @@
+KUNNR,NAME1,LAND1,ORT01,PSTLZ,STCD1,KTOKD,ERDAT,LOEVM,ZTERM,LAND1_raw,dq_country_lowercase,is_flagged_for_deletion,is_one_time,is_inferred
+0000100001,Silver Comercial S.A.,ES,Bilbao,48001,A28420415,KUNA,2021-06-29,,0001,ES,False,False,False,False
+0000100002,Iber Retail S.L.,ES,Barcelona,08001,B70225155,KUNA,2023-11-01,,NT30,ES,False,False,False,False
+0000100003,Sierra Retail S.L.U.,ES,Bilbao,48001,B27613013,KUNA,2022-05-01,,0001,ES,False,False,False,False
+0000100004,Meridian Distribuciones S.L.,ES,Barcelona,08001,A96026163,KUNA,2020-02-26,,NT30,ES,False,False,False,False
+0000100005,Terra Distribuciones S.A.,ES,Bilbao,48001,B94019938,KUNA,2018-08-30,,NT60,ES,False,False,False,False
+0000100006,Sol Brands S.L.U.,ES,Zaragoza,50001,B36572987,KUNA,2023-05-15,,NT60,ES,False,False,False,False
+0000100007,Evergreen Retail S.L.U.,ES,Barcelona,08001,A44018583,KUNA,2023-07-23,,0001,ES,False,False,False,False
+0000100008,Maple Trading S.A.,ES,Barcelona,08001,A61065291,KUNA,2018-11-27,,NT30,ES,False,False,False,False
+0000100009,Nova Distribuciones S.L.U.,ES,Sevilla,41001,A73537199,KUNA,2024-10-31,,NT60,ES,False,False,False,False
+0000100010,Northstar Retail S.L.U.,ES,Zaragoza,50001,B96333984,KUNA,2021-05-13,,NT30,ES,False,False,False,False
+0000100011,Bright Comercial S.L.,ES,Sevilla,41001,A54470843,KUNA,2024-09-22,,NT60,ES,False,False,False,False
+0000100012,Alpha Brands S.L.,ES,Barcelona,08001,B27907671,KUNA,2022-02-06,,NT30,ES,False,False,False,False
+0000100013,Terra Market S.A.,ES,Madrid,28001,A99619579,KUNA,2020-09-18,,NT15,ES,False,False,False,False
+0000100014,Nexo Home S.A.,ES,Zaragoza,50001,B47882612,KUNA,2018-04-10,,NT30,ES,False,False,False,False
+0000100015,Alpha Trading S.L.U.,ES,Valencia,46001,B63345974,KUNA,2023-01-10,,NT30,ES,False,False,False,False
+0000100016,Sierra Trading S.A.,ES,Valencia,46001,A88154421,KUNA,2024-09-04,,NT15,ES,False,False,False,False
+0000100017,Coral Retail S.A.,ES,Madrid,28001,A16525001,KUNA,2018-05-14,,NT15,es,True,False,False,False
+0000100018,Meridian Retail S.A.,ES,Zaragoza,50001,B17895274,KUNA,2019-05-23,,NT60,ES,False,False,False,False
+0000100019,Aurora Market S.L.,ES,Barcelona,08001,B24019010,KUNA,2019-07-30,,0001,ES,False,False,False,False
+0000100020,Luna Home S.L.,ES,Zaragoza,50001,A58383495,KUNA,2019-10-30,,NT30,ES,False,False,False,False
+0000100021,Terra Stores S.A.,ES,Zaragoza,50001,B33450925,KUNA,2020-02-28,,NT30,ES,False,False,False,False
+0000100022,Alpha Distribuciones S.A.,ES,Málaga,29001,B43005969,KUNA,2022-11-30,,0001,ES,False,False,False,False
+0000100023,Harbor Comercial S.A.,ES,Bilbao,48001,A88133160,KUNA,2024-05-24,X,0001,ES,False,True,False,False
+0000100024,Crest Distribuciones S.L.,ES,Sevilla,41001,A68980872,KUNA,2024-10-07,,NT60,ES,False,False,False,False
+0000100025,Granite Brands S.L.,ES,Sevilla,41001,A77905179,KUNA,2023-09-03,,NT60,ES,False,False,False,False
+0000100026,Bright Brands S.L.,ES,Valencia,46001,A48312514,KUNA,2022-06-12,,NT30,ES,False,False,False,False
+0000100027,Riverside Trading S.L.,ES,Madrid,28001,B96892187,KUNA,2022-12-02,,NT30,ES,False,False,False,False
+0000100028,Harbor Wholesale S.L.,ES,Zaragoza,50001,B19265361,KUNA,2020-12-31,,NT60,ES,False,False,False,False
+0000100029,Blue Brands S.L.,ES,Zaragoza,50001,B51920510,KUNA,2024-05-23,,NT15,ES,False,False,False,False
+0000100030,Prime Distribuciones S.A.,ES,Zaragoza,50001,A23689797,KUNA,2018-03-31,,NT30,ES,False,False,False,False
+0000100031,Iber Home S.A.,ES,Bilbao,48001,A16545564,KUNA,2021-12-04,,0001,ES,False,False,False,False
+0000100032,Silver Wholesale S.L.,ES,Valencia,46001,A13282948,KUNA,2024-02-09,,NT30,ES,False,False,False,False
+0000100033,Delta Distribuciones S.L.U.,ES,Sevilla,41001,B42040493,KUNA,2023-09-07,,NT30,ES,False,False,False,False
+0000100034,Pioneer Retail S.A.,ES,Valencia,46001,B80712538,KUNA,2023-03-16,,0001,ES,False,False,False,False
+0000100035,Silver Trading S.A.,ES,Bilbao,48001,B78844636,KUNA,2022-09-10,,NT60,ES,False,False,False,False
+0000100036,Coral Market S.L.,ES,Barcelona,08001,B68397523,KUNA,2023-12-11,,NT60,ES,False,False,False,False
+0000100037,Silver Home S.L.U.,ES,Madrid,28001,A47157067,KUNA,2018-06-22,,NT30,ES,False,False,False,False
+0000100038,Prime Comercial S.A.,ES,Bilbao,48001,B68743921,KUNA,2022-06-26,,NT15,ES,False,False,False,False
+0000100039,Oak Comercial S.L.U.,ES,Málaga,29001,B76559450,KUNA,2019-04-09,,NT30,ES,False,False,False,False
+0000100040,Prime Market S.A.,ES,Barcelona,08001,A25666993,KUNA,2022-10-13,,0001,ES,False,False,False,False
+0000100041,Orion Distribuciones S.A.,ES,Barcelona,08001,B83650017,KUNA,2024-04-10,,NT15,es,True,False,False,False
+0000100042,Prime Trading S.A.,ES,Madrid,28001,A92436102,KUNA,2020-11-04,,NT30,ES,False,False,False,False
+0000100043,Alpha Market S.L.,ES,Zaragoza,50001,B62646399,KUNA,2022-08-24,,NT30,ES,False,False,False,False
+0000100044,Nexo Trading S.L.U.,ES,Madrid,28001,B91091936,KUNA,2024-01-26,,NT60,ES,False,False,False,False
+0000100045,Delta Stores S.A.,ES,Valencia,46001,A39522537,KUNA,2019-07-04,,NT30,ES,False,False,False,False
+0000100046,Bright Outlet S.L.U.,ES,Madrid,28001,B41418729,KUNA,2024-08-10,,0001,ES,False,False,False,False
+0000100047,Aurora Trading S.L.,ES,Bilbao,48001,B51091527,KUNA,2021-06-14,,NT60,ES,False,False,False,False
+0000100048,Meridian Wholesale S.A.,ES,Málaga,29001,A70268034,KUNA,2019-09-19,,NT30,ES,False,False,False,False
+0000100049,Delta Brands S.L.,ES,Valencia,46001,A76016088,KUNA,2022-03-14,,NT60,ES,False,False,False,False
+0000100050,Riverside Market S.A.,ES,Zaragoza,50001,A21142486,KUNA,2022-09-09,,0001,ES,False,False,False,False
+0000100051,Maple Market S.L.U.,ES,Valencia,46001,B95924577,KUNA,2020-11-16,,0001,ES,False,False,False,False
+0000100052,Polar Outlet S.L.,ES,Zaragoza,50001,B21975307,KUNA,2024-08-27,,NT30,ES,False,False,False,False
+0000100053,Alpha Wholesale S.L.U.,ES,Madrid,28001,B28171009,KUNA,2020-03-09,,0001,ES,False,False,False,False
+0000100054,Polar Market S.L.U.,ES,Madrid,28001,B95451566,KUNA,2023-08-23,,NT15,ES,False,False,False,False
+0000100055,Crest Outlet S.L.U.,ES,Zaragoza,50001,B30249220,KUNA,2019-03-23,,NT30,ES,False,False,False,False
+0000100056,Iber Distribuciones S.L.,ES,Madrid,28001,B19598642,KUNA,2021-09-13,,NT15,ES,False,False,False,False
+0000100057,Northstar Outlet S.A.,ES,Bilbao,48001,B81543654,KUNA,2021-07-09,,0001,ES,False,False,False,False
+0000100058,Silver Outlet S.L.U.,ES,Sevilla,41001,B43991396,KUNA,2023-09-25,,NT30,ES,False,False,False,False
+0000100059,Oak Stores SAS,FR,Lyon,69001,FR862486628,KUNX,2019-02-27,,0001,FR,False,False,False,False
+0000100060,Atlas Wholesale SAS,FR,Paris,75001,FR832175432,KUNX,2023-09-05,,NT60,FR,False,False,False,False
+0000100061,Orion Comercial SAS,FR,Paris,75001,FR669600187,KUNX,2021-04-07,,NT15,FR,False,False,False,False
+0000100062,Bright Market SAS,FR,Lyon,69001,FR367703894,KUNX,2021-04-21,,0001,FR,False,False,False,False
+0000100063,Cobalt Outlet SAS,FR,Paris,75001,FR807343198,KUNX,2023-07-30,,NT30,FR,False,False,False,False
+0000100064,Coral Retail AG,DE,Hamburg,20095,DE963293852,KUNX,2023-07-18,,NT30,DE,False,False,False,False
+0000100065,Luna Market AG,DE,Berlin,10115,DE906320667,KUNX,2022-03-20,,NT60,DE,False,False,False,False
+0000100066,Terra Market GmbH,DE,Berlin,10115,DE350523631,KUNX,2020-06-01,,NT30,DE,False,False,False,False
+0000100067,Northstar Retail AG,DE,Berlin,10115,DE391854591,KUNX,2023-08-04,,NT60,DE,False,False,False,False
+0000100068,Sierra Stores Lda.,PT,Porto,4000-007,PT544490763,KUNX,2018-01-12,,NT30,PT,False,False,False,False
+0000100069,Nexo Wholesale S.A.,PT,Porto,4000-007,PT577275051,KUNX,2023-03-28,,NT30,PT,False,False,False,False
+0000100070,Aurora Comercial Lda.,PT,Porto,4000-007,PT652694158,KUNX,2018-10-18,,NT60,PT,False,False,False,False
+0000100071,Polar Retail Lda.,PT,Lisboa,1100-148,PT829109336,KUNX,2019-09-16,,0001,PT,False,False,False,False
+0000100072,Bright Stores S.r.l.,IT,Milano,20121,IT495370454,KUNX,2019-04-14,,NT60,IT,False,False,False,False
+0000100073,Ember Wholesale S.p.A.,IT,Milano,20121,IT770512656,KUNX,2024-02-16,,0001,IT,False,False,False,False
+0000100074,Luna Wholesale Inc.,US,Miami,33101,91-3689501,KUNX,2020-04-04,,NT15,US,False,False,False,False
+0000100075,Luna Outlet Inc.,US,Seattle,98101,76-2929991,KUNX,2023-03-21,,NT15,US,False,False,False,False
+0000100076,Sierra Trading Corp.,US,Denver,80201,31-6845155,KUNX,2019-07-29,,0001,US,False,False,False,False
+0000100077,Luna Stores Inc.,US,Chicago,60601,91-1762473,KUNX,2019-04-06,,NT30,US,False,False,False,False
+0000100078,Crest Home Corp.,US,New York,10001,43-6675392,KUNX,2021-12-20,,NT30,US,False,False,False,False
+0000100079,Vertex Retail Ltd.,GB,London,EC1A 1BB,GB753026999,KUNX,2021-07-02,,0001,GB,False,False,False,False
+0000100080,Silver Home Ltd.,GB,London,EC1A 1BB,GB401249661,KUNX,2019-06-17,,NT60,GB,False,False,False,False
+0000100081,Maple Comercial LLC,US,Austin,73301,55-1038927,KUNA,2022-03-15,,NT60,US,False,False,False,False
+0000100082,Bright Outlet Corp.,US,New York,10001,48-2747380,KUNA,2019-09-30,,NT30,US,False,False,False,False
+0000100083,Evergreen Distribuciones Corp.,US,Chicago,60601,88-7146039,KUNA,2020-03-10,,NT30,US,False,False,False,False
+0000100084,Coral Home LLC,US,Austin,73301,90-4361097,KUNA,2023-10-06,,0001,US,False,False,False,False
+0000100085,Coral Market Corp.,US,Miami,33101,10-4009423,KUNA,2021-03-13,,0001,US,False,False,False,False
+0000100086,Silver Market Inc.,US,Chicago,60601,72-9852619,KUNA,2019-07-31,,NT60,US,False,False,False,False
+0000100087,Northstar Retail Inc.,US,Miami,33101,30-4519486,KUNA,2022-05-07,,NT30,US,False,False,False,False
+0000100088,Evergreen Stores LLC,US,Miami,33101,27-3781872,KUNA,2021-04-27,,NT15,US,False,False,False,False
+0000100089,Bright Comercial Corp.,US,Austin,73301,69-7745570,KUNA,2021-10-28,,0001,US,False,False,False,False
+0000100090,Ember Wholesale LLC,US,Miami,33101,42-5750800,KUNA,2023-01-30,,NT30,US,False,False,False,False
+0000100091,Pioneer Trading Inc.,US,Miami,33101,39-9966304,KUNA,2020-04-02,,NT60,US,False,False,False,False
+0000100092,Pioneer Comercial Inc.,US,Chicago,60601,71-5133039,KUNA,2019-11-06,,0001,US,False,False,False,False
+0000100093,Prime Wholesale Corp.,US,Seattle,98101,96-4803322,KUNA,2023-04-07,,NT30,US,False,False,False,False
+0000100094,Oak Outlet Inc.,US,Austin,73301,27-6566680,KUNA,2018-12-21,,NT60,US,False,False,False,False
+0000100095,Oak Stores Corp.,US,Seattle,98101,79-9520618,KUNA,2023-09-14,,NT30,US,False,False,False,False
+0000100096,Atlas Distribuciones Inc.,US,Seattle,98101,85-2413129,KUNA,2018-06-09,,0001,US,False,False,False,False
+0000100097,Meridian Distribuciones LLC,US,Denver,80201,14-4601839,KUNA,2019-04-16,,NT30,US,False,False,False,False
+0000100098,Sol Brands Corp.,US,Seattle,98101,59-3108597,KUNA,2024-11-01,,0001,US,False,False,False,False
+0000100099,Luna Distribuciones Corp.,US,Chicago,60601,84-9104180,KUNA,2019-02-18,,NT15,US,False,False,False,False
+0000100100,Delta Wholesale Corp.,US,New York,10001,17-9574795,KUNA,2019-11-09,,NT30,US,False,False,False,False
+0000100101,Sierra Wholesale Corp.,US,Denver,80201,97-7452311,KUNA,2022-09-12,,NT15,US,False,False,False,False
+0000100102,Sol Brands Inc.,US,Chicago,60601,73-3839140,KUNA,2021-10-10,,NT30,US,False,False,False,False
+0000100103,Bright Distribuciones LLC,US,Chicago,60601,42-3466304,KUNA,2018-05-13,,NT15,US,False,False,False,False
+0000100104,Luna Outlet Corp.,US,Denver,80201,42-4464944,KUNA,2018-10-17,,NT30,US,False,False,False,False
+0000100105,Maple Outlet LLC,US,Austin,73301,60-7067173,KUNA,2019-09-14,,NT60,US,False,False,False,False
+0000100106,Evergreen Home Corp.,US,Austin,73301,17-7847946,KUNA,2019-01-31,,NT30,US,False,False,False,False
+0000100107,Summit Retail Inc.,US,Austin,73301,26-1483126,KUNA,2018-03-24,,0001,US,False,False,False,False
+0000100108,Falcon Trading Corp.,US,Austin,73301,62-2673119,KUNA,2019-01-24,,NT60,US,False,False,False,False
+0000100109,Maple Distribuciones Corp.,US,Chicago,60601,32-5614084,KUNA,2019-10-08,,0001,US,False,False,False,False
+0000100110,Ember Market Corp.,US,Miami,33101,55-8203737,KUNA,2020-09-22,,NT60,US,False,False,False,False
+0000100111,Prime Distribuciones LLC,US,Seattle,98101,75-3647315,KUNA,2024-03-27,,NT30,US,False,False,False,False
+0000100112,Summit Trading LLC,US,Miami,33101,88-1570398,KUNA,2022-07-04,,NT30,US,False,False,False,False
+0000100113,Crest Trading Corp.,US,Seattle,98101,54-8317986,KUNA,2020-04-13,,0001,US,False,False,False,False
+0000100114,Alpha Distribuciones Inc.,US,New York,10001,95-9131107,KUNA,2019-06-05,,NT30,US,False,False,False,False
+0000100115,Delta Trading Inc.,US,Seattle,98101,36-4571791,KUNA,2020-06-12,,0001,US,False,False,False,False
+0000100116,Sol Wholesale Inc.,US,Chicago,60601,90-2077689,KUNA,2022-12-12,,NT60,US,False,False,False,False
+0000100117,Coral Wholesale LLC,US,Miami,33101,16-4814949,KUNA,2023-11-02,,NT15,US,False,False,False,False
+0000100118,Granite Wholesale LLC,US,Chicago,60601,25-9666030,KUNA,2024-07-15,,0001,US,False,False,False,False
+0000100119,Northstar Comercial LLC,US,Denver,80201,61-1401083,KUNA,2024-04-14,,NT30,US,False,False,False,False
+0000100120,Maple Brands LLC,US,Denver,80201,27-9361245,KUNA,2022-11-27,,0001,US,False,False,False,False
+0000100121,Delta Distribuciones LLC,US,New York,10001,88-8994464,KUNA,2020-01-13,,NT15,US,False,False,False,False
+0000100122,Atlas Retail LLC,US,Denver,80201,12-7349044,KUNA,2023-01-28,,NT15,US,False,False,False,False
+0000100123,Atlas Market PLC,GB,Glasgow,G1 1XQ,GB919255531,KUNA,2021-12-22,,0001,GB,False,False,False,False
+0000100124,Crest Comercial Ltd.,GB,Bristol,BS1 4DJ,GB275691415,KUNA,2024-04-24,,0001,GB,False,False,False,False
+0000100125,Orion Stores PLC,GB,Glasgow,G1 1XQ,GB215003817,KUNA,2022-10-24,,0001,GB,False,False,False,False
+0000100126,Vertex Wholesale Ltd.,GB,Manchester,M1 1AA,GB295054035,KUNA,2018-11-01,,NT30,GB,False,False,False,False
+0000100127,Bright Brands Ltd.,GB,Glasgow,G1 1XQ,GB630702233,KUNA,2021-02-23,,NT15,GB,False,False,False,False
+0000100128,Cobalt Comercial PLC,GB,Manchester,M1 1AA,GB393624998,KUNA,2024-09-06,,0001,GB,False,False,False,False
+0000100129,Falcon Home Ltd.,GB,Leeds,LS1 1UR,GB267649474,KUNA,2022-04-19,,NT30,GB,False,False,False,False
+0000100130,Vertex Comercial Ltd.,GB,Leeds,LS1 1UR,GB996587319,KUNA,2022-01-11,,0001,GB,False,False,False,False
+0000100131,Zenith Distribuciones PLC,GB,London,EC1A 1BB,GB253604302,KUNA,2018-01-31,,NT60,GB,False,False,False,False
+0000100132,Nexo Trading PLC,GB,Leeds,LS1 1UR,GB983321138,KUNA,2022-11-13,,NT30,GB,False,False,False,False
+0000100133,Atlas Brands Ltd.,GB,Manchester,M1 1AA,GB130105664,KUNA,2019-02-05,,NT15,GB,False,False,False,False
+0000100134,Terra Outlet Ltd.,GB,Glasgow,G1 1XQ,GB836304369,KUNA,2018-12-16,,NT30,GB,False,False,False,False
+0000100135,Luna Brands Ltd.,GB,Bristol,BS1 4DJ,GB926937909,KUNA,2024-09-18,,NT30,GB,False,False,False,False
+0000100136,Aurora Wholesale PLC,GB,London,EC1A 1BB,GB408967573,KUNA,2018-04-26,,NT15,GB,False,False,False,False
+0000100137,Coral Outlet Ltd.,GB,Glasgow,G1 1XQ,GB496550729,KUNA,2019-05-26,,NT60,GB,False,False,False,False
+0000100138,Granite Trading Ltd.,GB,Bristol,BS1 4DJ,GB931850046,KUNA,2024-05-17,,NT15,GB,False,False,False,False
+0000100139,Iber Comercial Ltd.,GB,London,EC1A 1BB,GB970364608,KUNA,2022-01-19,,0001,GB,False,False,False,False
+0000100140,Orion Wholesale Ltd.,GB,Glasgow,G1 1XQ,GB274692207,KUNA,2019-08-29,,NT15,GB,False,False,False,False
+0000100141,Meridian Wholesale Ltd.,GB,Manchester,M1 1AA,GB565661020,KUNA,2020-05-22,,NT30,GB,False,False,False,False
+0000100142,Nova Brands Ltd.,GB,Glasgow,G1 1XQ,GB227996332,KUNA,2024-10-06,,NT60,GB,False,False,False,False
+0000100143,Silver Comercial PLC,GB,Bristol,BS1 4DJ,GB582933642,KUNA,2024-06-22,,NT30,GB,False,False,False,False
+0000100144,Prime Home PLC,GB,Bristol,BS1 4DJ,GB404760857,KUNA,2021-05-14,,NT60,GB,False,False,False,False
+0000100145,Atlas Outlet PLC,GB,London,EC1A 1BB,GB497226990,KUNA,2023-02-21,,NT15,GB,False,False,False,False
+0000100146,Terra Home PLC,GB,London,EC1A 1BB,GB121848900,KUNA,2020-09-30,,NT60,GB,False,False,False,False
+0000100147,Luna Trading Ltd.,GB,Glasgow,G1 1XQ,GB831059923,KUNA,2020-09-25,,NT60,GB,False,False,False,False
+0000100148,Delta Outlet PLC,GB,London,EC1A 1BB,GB395815439,KUNA,2023-07-03,,NT30,GB,False,False,False,False
+0000100149,Cobalt Brands Ltd.,GB,Manchester,M1 1AA,GB808880729,KUNA,2018-02-03,,NT30,GB,False,False,False,False
+0000100150,Bright Home Ltd.,GB,Glasgow,G1 1XQ,GB456918093,KUNA,2021-09-21,,NT30,GB,False,False,False,False
+0000100151,Granite Retail SAS,FR,Lyon,69001,FR809782478,KUNX,2018-06-08,,NT30,FR,False,False,False,False
+0000100152,Sol Brands SAS,FR,Lyon,69001,FR749952293,KUNX,2024-11-16,,NT30,FR,False,False,False,False
+0000100153,Coral Comercial GmbH,DE,Berlin,10115,DE581820458,KUNX,2019-12-13,,NT15,DE,False,False,False,False
+0000100154,One-time customer,ES,,,,CPD,2019-01-01,,0001,ES,False,False,True,False
+0000100155,One-time customer,US,,,,CPD,2019-01-01,,0001,US,False,False,True,False
+0000100156,One-time customer,GB,,,,CPD,2019-01-01,,0001,GB,False,False,True,False
+0000100999,,,,,,,,,,,False,False,False,True

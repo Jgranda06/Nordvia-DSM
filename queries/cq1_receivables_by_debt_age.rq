@@ -1,0 +1,75 @@
+# CQ1 - What is the outstanding receivables balance per customer, by debt age?
+#
+# Open item   : a customer line not cleared on or before the key date.
+# Debt age    : days from the due date of the item to the key date. The limits of the
+#               buckets are read from the ontology (nvf:DebtAgeBucket), not written here.
+# Credit memos: open credits reduce what the customer owes but have no meaningful age,
+#               so they are reported in their own column instead of an age bucket.
+# Amounts     : signed (debit +, credit -), in the local currency of the company and in euros.
+# Reversed invoices need no filter: each one is cleared by its reversal, so it is not open.
+
+PREFIX nvf:     <https://nordvia.com/ontology/finance#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX foaf:    <http://xmlns.com/foaf/0.1/>
+
+SELECT ?company ?customerNumber ?customerName ?customerKind ?currency ?bucket ?bucketOrder
+       (SUM(?signed) AS ?amount) (SUM(?signedEur) AS ?amountEur) (COUNT(?line) AS ?items)
+WHERE {
+  VALUES ?keyDate { "2025-12-31T00:00:00"^^xsd:dateTime }
+
+  ?line nvf:customer ?customer ;
+        nvf:lineItemOf ?document ;
+        nvf:postingSide ?side ;
+        nvf:amountInLocalCurrency ?local ;
+        nvf:amountInGroupCurrency ?euros .
+  ?document nvf:postingDate ?posted ;
+            nvf:inCompany ?co .
+  FILTER (?posted <= ?keyDate)
+
+  # open at the key date
+  OPTIONAL { ?line nvf:clearingDate ?cleared }
+  FILTER (!BOUND(?cleared) || ?cleared > ?keyDate)
+
+  ?co dcterms:identifier ?company ;
+      nvf:localCurrency/skos:notation ?currency .
+  ?customer dcterms:identifier ?customerNumber ;
+            a ?kind .
+  ?kind rdfs:subClassOf nvf:Customer ;
+        rdfs:label ?customerKind .
+  OPTIONAL { ?customer foaf:name ?customerName }
+
+  BIND (IF(?side = nvf:Debit, ?local, -?local) AS ?signed)
+  BIND (IF(?side = nvf:Debit, ?euros, -?euros) AS ?signedEur)
+
+  # days overdue = day number of the key date - day number of the due date
+  # (only items with a due date, that is, amounts owed; credits have no age)
+  OPTIONAL { ?line nvf:dueDate ?due }
+  BIND (FLOOR((14 - MONTH(?due)) / 12) AS ?a1)
+  BIND (YEAR(?due) + 4800 - ?a1 AS ?y1)
+  BIND (MONTH(?due) + 12 * ?a1 - 3 AS ?m1)
+  BIND (DAY(?due) + FLOOR((153 * ?m1 + 2) / 5) + 365 * ?y1 + FLOOR(?y1 / 4) - FLOOR(?y1 / 100) + FLOOR(?y1 / 400) AS ?dueDay)
+  BIND (FLOOR((14 - MONTH(?keyDate)) / 12) AS ?a2)
+  BIND (YEAR(?keyDate) + 4800 - ?a2 AS ?y2)
+  BIND (MONTH(?keyDate) + 12 * ?a2 - 3 AS ?m2)
+  BIND (DAY(?keyDate) + FLOOR((153 * ?m2 + 2) / 5) + 365 * ?y2 + FLOOR(?y2 / 4) - FLOOR(?y2 / 100) + FLOOR(?y2 / 400) AS ?keyDay)
+  BIND (?keyDay - ?dueDay AS ?daysOverdue)
+
+  # the buckets and their limits come from the ontology
+  ?ageBucket a nvf:DebtAgeBucket ;
+             rdfs:label ?ageLabel .
+  OPTIONAL { ?ageBucket nvf:minDaysOverdue ?min }
+  OPTIONAL { ?ageBucket nvf:maxDaysOverdue ?max }
+
+  # an amount owed goes to the bucket its days overdue fall in;
+  # an open credit is kept once (against the first bucket) and labelled apart
+  FILTER (IF(?side = nvf:Debit,
+             (!BOUND(?min) || ?daysOverdue >= ?min) && (!BOUND(?max) || ?daysOverdue <= ?max),
+             ?ageBucket = nvf:NotYetDue))
+  BIND (IF(?side = nvf:Debit, ?ageLabel, "Open credits") AS ?bucket)
+  BIND (IF(?side = nvf:Debit, COALESCE(?min, 0), 999) AS ?bucketOrder)
+}
+GROUP BY ?company ?customerNumber ?customerName ?customerKind ?currency ?bucket ?bucketOrder
+ORDER BY ?company ?customerNumber ?bucketOrder

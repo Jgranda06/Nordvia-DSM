@@ -1,0 +1,238 @@
+prefixes:
+  nvf: https://nordvia.com/ontology/finance#
+  id: https://nordvia.com/id/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  skos: http://www.w3.org/2004/02/skos/core#
+  dcterms: http://purl.org/dc/terms/
+  foaf: http://xmlns.com/foaf/0.1/
+  org: http://www.w3.org/ns/org#
+  rov: http://www.w3.org/ns/regorg#
+  locn: http://www.w3.org/ns/locn#
+  sdo: https://schema.org/
+
+mappings:
+
+  company:
+    sources:
+      - [gold/company.csv~csv]
+    s: id:company/$(company_code)
+    po:
+      - [a, nvf:Company]
+      - [dcterms:identifier, $(company_code)]
+      - [rov:legalName, $(legal_name)]
+      - [rdfs:label, $(legal_name)]
+      - [nvf:localCurrency, $(local_currency_iri)~iri]
+      - [dcterms:language, $(language_tag), xsd:language]
+      - [nvf:chartOfAccounts, id:chart-of-accounts/$(chart_of_accounts_code)~iri]
+      - [nvf:fiscalYearVariant, $(fiscal_year_variant)]
+      - [locn:address, id:address/$(address_id)~iri]
+
+  controlling_area:
+    sources:
+      - [gold/controlling_area.csv~csv]
+    s: id:controlling-area/$(controlling_area_code)
+    po:
+      - [a, nvf:ControllingArea]
+      - [dcterms:identifier, $(controlling_area_code)]
+      - [rdfs:label, $(controlling_area_code)]
+
+  cost_center:
+    sources:
+      - [gold/cost_center.csv~csv]
+    s: id:cost-center/$(cost_center_number)
+    po:
+      - [a, nvf:CostCenter]
+      - [dcterms:identifier, $(cost_center_number)]
+      - [org:unitOf, id:company/$(company_code)~iri]
+      - [nvf:controllingArea, id:controlling-area/$(controlling_area_code)~iri]
+      - [nvf:costCenterCategory, nvf:$(category)~iri]
+      - [nvf:validFrom, $(valid_from), xsd:dateTime]
+      - [nvf:validTo, $(valid_to), xsd:dateTime]
+      - [nvf:personResponsible, $(person_responsible)]
+      - [skos:prefLabel, $(name), en~lang]
+      - [skos:altLabel, $(short_name), en~lang]
+      - [rdfs:label, $(name)]
+
+
+
+  chart_of_accounts:
+    sources:
+      - [gold/chart_of_accounts.csv~csv]
+    s: id:chart-of-accounts/$(chart_of_accounts_code)
+    po:
+      - [a, nvf:ChartOfAccounts]
+      - [dcterms:identifier, $(chart_of_accounts_code)]
+      - [rdfs:label, $(chart_of_accounts_code)]
+
+  gl_account:
+    sources:
+      - [gold/gl_account.csv~csv]
+    s: id:account/$(account_number)
+    po:
+      - [a, nvf:GLAccount]
+      - [a, nvf:$(account_class)~iri]
+      - [dcterms:identifier, $(account_number)]
+      - [skos:inScheme, id:chart-of-accounts/$(chart_of_accounts_code)~iri]
+      - [nvf:accountGroup, $(account_group)]
+      - [dcterms:created, $(created_on), xsd:dateTime]
+      - [nvf:enteredBy, $(entered_by)]
+      - [skos:prefLabel, $(name_en), en~lang]
+      - [skos:prefLabel, $(name_es), es~lang]
+      - [skos:altLabel, $(short_name_en), en~lang]
+      - [skos:altLabel, $(short_name_es), es~lang]
+
+  company_account:
+    sources:
+      - [gold/company_account.csv~csv]
+    s: id:company-account/$(company_account_id)
+    po:
+      - [a, nvf:CompanyAccount]
+      - [a, nvf:$(account_class)~iri]
+      - [a, nvf:$(extra_class)~iri]
+      - [nvf:inCompany, id:company/$(company_code)~iri]
+      - [nvf:glAccount, id:account/$(account_number)~iri]
+      - [nvf:accountCurrency, $(account_currency_iri)~iri]
+      - [nvf:openItemManaged, $(open_item_managed), xsd:boolean]
+      - [nvf:fieldStatusGroup, $(field_status_group)]
+      - [nvf:lineItemDisplay, $(line_item_display), xsd:boolean]
+
+
+  customer:
+    sources:
+      - [gold/customer.csv~csv]
+    s: id:customer/$(customer_number)
+    po:
+      - [a, nvf:Customer]
+      - [a, nvf:$(customer_class)~iri]
+      - [dcterms:identifier, $(customer_number)]
+      - [foaf:name, $(name)]
+      - [rdfs:label, $(name)]
+      - [sdo:taxID, $(tax_id)]
+      - [dcterms:created, $(created_on), xsd:dateTime]
+      - [nvf:flaggedForDeletion, $(flagged_for_deletion), xsd:boolean]
+      - [nvf:paymentTerms, nvf:PT_$(payment_terms_code)~iri]
+      - [locn:address, id:address/$(address_id)~iri]
+
+  payee:
+    sources:
+      - [gold/payee.csv~csv]
+    s: id:payee/$(payee_number)
+    po:
+      - [a, nvf:Payee]
+      - [a, nvf:$(payee_class)~iri]
+      - [foaf:name, $(name)]
+      - [rdfs:label, $(name)]
+      - [sdo:taxID, $(tax_id)]
+      - [dcterms:created, $(created_on), xsd:dateTime]
+      - [nvf:postingBlocked, $(posting_blocked), xsd:boolean]
+      - [nvf:paymentTerms, nvf:PT_$(payment_terms_code)~iri]
+      - [locn:address, id:address/$(address_id)~iri]
+
+  payee_identifier:
+    sources:
+      - [gold/payee_identifier.csv~csv]
+    s: id:payee/$(payee_number)
+    po:
+      - [dcterms:identifier, $(identifier)]
+
+  address:
+    sources:
+      - [gold/address.csv~csv]
+    s: id:address/$(address_id)
+    po:
+      - [a, locn:Address]
+      - [locn:postName, $(city)]
+      - [locn:postCode, $(postal_code)]
+      - [locn:adminUnitL1, $(country)]
+
+
+  document_type:
+    sources:
+      - [gold/document_type.csv~csv]
+    s: id:document-type/$(document_type_code)
+    po:
+      - [a, nvf:DocumentType]
+      - [skos:notation, $(document_type_code)]
+      - [skos:prefLabel, $(name), en~lang]
+      - [nvf:numberRange, $(number_range)]
+
+  posting_key:
+    sources:
+      - [gold/posting_key.csv~csv]
+    s: id:posting-key/$(posting_key_code)
+    po:
+      - [a, nvf:PostingKey]
+      - [skos:notation, $(posting_key_code)]
+      - [skos:prefLabel, $(name), en~lang]
+      - [nvf:postingSide, nvf:$(side)~iri]
+      - [nvf:accountType, nvf:$(account_type)~iri]
+
+
+  accounting_document:
+    sources:
+      - [gold/accounting_document.csv~csv]
+    s: id:document/$(document_id)
+    po:
+      - [a, nvf:AccountingDocument]
+      - [a, nvf:$(document_class)~iri]
+      - [a, nvf:$(extra_class)~iri]
+      - [nvf:inCompany, id:company/$(company_code)~iri]
+      - [nvf:documentNumber, $(document_number)]
+      - [nvf:fiscalYear, $(fiscal_year), xsd:integer]
+      - [nvf:fiscalPeriod, $(fiscal_period), xsd:integer]
+      - [nvf:documentType, id:document-type/$(document_type_code)~iri]
+      - [nvf:documentDate, $(document_date), xsd:dateTime]
+      - [nvf:postingDate, $(posting_date), xsd:dateTime]
+      - [nvf:entryDate, $(entry_date), xsd:dateTime]
+      - [nvf:enteredBy, $(entered_by)]
+      - [nvf:documentCurrency, $(document_currency_iri)~iri]
+      - [nvf:exchangeRate, $(exchange_rate), xsd:decimal]
+      - [nvf:reference, $(reference)]
+      - [dcterms:description, $(header_text)]
+      - [nvf:reverses, id:document/$(reverses_document_id)~iri]
+      - [nvf:reversedBy, id:document/$(reversed_by_document_id)~iri]
+      - [nvf:creditFor, id:document/$(credit_for_document_id)~iri]
+
+  line_item:
+    sources:
+      - [gold/line_item.csv~csv]
+    s: id:line-item/$(line_item_id)
+    po:
+      - [a, nvf:LineItem]
+      - [a, nvf:$(line_class)~iri]
+      - [nvf:lineItemOf, id:document/$(document_id)~iri]
+      - [nvf:lineNumber, $(line_number), xsd:integer]
+      - [nvf:postingKey, id:posting-key/$(posting_key_code)~iri]
+      - [nvf:postingSide, nvf:$(side)~iri]
+      - [nvf:accountType, nvf:$(account_type)~iri]
+      - [nvf:glAccount, id:account/$(account_number)~iri]
+      - [nvf:customer, id:customer/$(customer_number)~iri]
+      - [nvf:payee, id:payee/$(payee_number)~iri]
+      - [nvf:amountInDocumentCurrency, $(amount_document_currency), xsd:decimal]
+      - [nvf:amountInLocalCurrency, $(amount_local_currency), xsd:decimal]
+      - [nvf:amountInGroupCurrency, $(amount_group_currency), xsd:decimal]
+      - [nvf:taxCode, nvf:Tax_$(tax_code)~iri]
+      - [nvf:costCenter, id:cost-center/$(cost_center_number)~iri]
+      - [nvf:paymentTerms, nvf:PT_$(payment_terms_code)~iri]
+      - [nvf:baselineDate, $(baseline_date), xsd:dateTime]
+      - [nvf:dueDate, $(due_date), xsd:dateTime]
+      - [nvf:clearedBy, id:document/$(cleared_by_document_id)~iri]
+      - [nvf:clearingDate, $(clearing_date), xsd:dateTime]
+      - [dcterms:description, $(text)]
+
+
+  exchange_rate:
+    sources:
+      - [gold/exchange_rate.csv~csv]
+    s: id:exchange-rate/$(rate_id)
+    po:
+      - [a, nvf:MonthlyExchangeRate]
+      - [rdfs:label, $(rate_id)]
+      - [nvf:fromCurrency, $(from_currency_iri)~iri]
+      - [nvf:toCurrency, $(to_currency_iri)~iri]
+      - [nvf:fiscalYear, $(fiscal_year), xsd:integer]
+      - [nvf:fiscalPeriod, $(fiscal_period), xsd:integer]
+      - [nvf:rate, $(rate), xsd:decimal]
+      - [nvf:derivationMethod, nvf:$(method)~iri]
+      - [nvf:documentsUsed, $(documents_used), xsd:integer]

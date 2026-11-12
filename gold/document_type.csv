@@ -1,0 +1,8 @@
+document_type_code,name,number_range
+DR,Customer invoice,18
+DG,Customer credit memo,16
+DZ,Customer payment,14
+KR,Vendor invoice,19
+KZ,Vendor payment,15
+SA,G/L account document,01
+AB,Accounting document (reversals),02

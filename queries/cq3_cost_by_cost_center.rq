@@ -1,0 +1,50 @@
+# CQ3 - How much cost has each cost center absorbed, by type of expense?
+#
+# Cost            : lines posted to an account on which the company requires a cost center
+#                   (nvf:CostCenterRequiredAccount). Debits add cost, credits take it away.
+# Type of expense : the G/L account of the line.
+# No cost center  : a few lines have none although the account requires it; they are kept
+#                   and shown under "(no cost center)" so the total stays complete.
+# Reversal documents and the documents they reverse are left out.
+# Amounts in the local currency of the company and in euros.
+
+PREFIX nvf:     <https://nordvia.com/ontology/finance#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT ?company ?costCenter ?costCenterName ?account ?expenseType ?currency
+       (SUM(?signed) AS ?cost) (SUM(?signedEur) AS ?costEur) (COUNT(?line) AS ?lines)
+WHERE {
+  ?line nvf:lineItemOf ?document ;
+        nvf:glAccount ?glAccount ;
+        nvf:postingSide ?side ;
+        nvf:amountInLocalCurrency ?local ;
+        nvf:amountInGroupCurrency ?euros .
+  ?document nvf:inCompany ?co .
+  FILTER NOT EXISTS { ?document a nvf:ReversalDocument }
+  FILTER NOT EXISTS { ?document a nvf:ReversedDocument }
+
+  # the account requires a cost center in the company of the document
+  ?setup a nvf:CostCenterRequiredAccount ;
+         nvf:inCompany ?co ;
+         nvf:glAccount ?glAccount .
+
+  ?co dcterms:identifier ?company ;
+      nvf:localCurrency/skos:notation ?currency .
+  ?glAccount dcterms:identifier ?account ;
+             skos:prefLabel ?expenseType .
+  FILTER (LANG(?expenseType) = "en")
+
+  OPTIONAL {
+    ?line nvf:costCenter ?cc .
+    ?cc dcterms:identifier ?ccNumber ;
+        skos:prefLabel ?ccName .
+  }
+  BIND (COALESCE(?ccNumber, "(no cost center)") AS ?costCenter)
+  BIND (COALESCE(STR(?ccName), "(no cost center)") AS ?costCenterName)
+
+  BIND (IF(?side = nvf:Debit, ?local, -?local) AS ?signed)
+  BIND (IF(?side = nvf:Debit, ?euros, -?euros) AS ?signedEur)
+}
+GROUP BY ?company ?costCenter ?costCenterName ?account ?expenseType ?currency
+ORDER BY ?company ?costCenter ?account

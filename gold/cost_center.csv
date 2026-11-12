@@ -1,0 +1,26 @@
+cost_center_number,company_code,controlling_area_code,category,valid_from,valid_to,person_responsible,name,short_name
+0000011010,1000,NV00,Administration,2019-01-01T00:00:00,9999-12-31T00:00:00,M. Puig,Administration,Administration
+0000011020,1000,NV00,Administration,2019-01-01T00:00:00,9999-12-31T00:00:00,L. Romero,Finance,Finance
+0000011030,1000,NV00,Service,2019-01-01T00:00:00,9999-12-31T00:00:00,A. Serra,IT,IT
+0000011040,1000,NV00,Sales,2019-01-01T00:00:00,9999-12-31T00:00:00,C. Vidal,Marketing,Marketing
+0000011050,1000,NV00,Sales,2019-01-01T00:00:00,9999-12-31T00:00:00,J. Ortega,Sales,Sales
+0000011060,1000,NV00,Service,2019-01-01T00:00:00,9999-12-31T00:00:00,P. Navarro,Logistics,Logistics
+0000011070,1000,NV00,Sales,2019-01-01T00:00:00,9999-12-31T00:00:00,R. Font,Store Barcelona Diagonal,Store Barcelona Diag
+0000011080,1000,NV00,Sales,2019-01-01T00:00:00,2025-06-30T00:00:00,S. Gil,Store Valencia Centro,Store Valencia Centr
+0000021010,2000,NV00,Administration,2019-01-01T00:00:00,9999-12-31T00:00:00,K. Miller,Administration,Administration
+0000021020,2000,NV00,Administration,2019-01-01T00:00:00,9999-12-31T00:00:00,D. Brown,Finance,Finance
+0000021030,2000,NV00,Service,2019-01-01T00:00:00,9999-12-31T00:00:00,T. Nguyen,IT,IT
+0000021040,2000,NV00,Sales,2019-01-01T00:00:00,9999-12-31T00:00:00,E. Wilson,Marketing,Marketing
+0000021050,2000,NV00,Sales,2019-01-01T00:00:00,9999-12-31T00:00:00,B. Clark,Sales,Sales
+0000021060,2000,NV00,Service,2019-01-01T00:00:00,9999-12-31T00:00:00,H. Patel,Logistics,Logistics
+0000021070,2000,NV00,Sales,2019-01-01T00:00:00,9999-12-31T00:00:00,G. Lewis,Store Chicago Loop,Store Chicago Loop
+0000021080,2000,NV00,Sales,2019-01-01T00:00:00,9999-12-31T00:00:00,N. Davis,Store Austin Domain,Store Austin Domain
+0000031010,3000,NV00,Administration,2019-01-01T00:00:00,9999-12-31T00:00:00,O. Hughes,Administration,Administration
+0000031020,3000,NV00,Administration,2019-01-01T00:00:00,9999-12-31T00:00:00,F. Evans,Finance,Finance
+0000031030,3000,NV00,Service,2019-01-01T00:00:00,9999-12-31T00:00:00,I. Walsh,IT,IT
+0000031040,3000,NV00,Sales,2019-01-01T00:00:00,9999-12-31T00:00:00,W. Price,Marketing,Marketing
+0000031050,3000,NV00,Sales,2019-01-01T00:00:00,9999-12-31T00:00:00,Y. Shah,Sales,Sales
+0000031060,3000,NV00,Service,2019-01-01T00:00:00,9999-12-31T00:00:00,L. Barker,Logistics,Logistics
+0000031070,3000,NV00,Sales,2019-01-01T00:00:00,9999-12-31T00:00:00,C. Moore,Store Manchester Arndale,Store Manchester Arn
+0000031080,3000,NV00,Sales,2019-01-01T00:00:00,9999-12-31T00:00:00,R. Kelly,Store Leeds Trinity,Store Leeds Trinity
+0000011090,1000,NV00,Sales,2025-07-01T00:00:00,9999-12-31T00:00:00,M. Puig,Store Valencia Ruzafa,Store Valencia Ruzafa

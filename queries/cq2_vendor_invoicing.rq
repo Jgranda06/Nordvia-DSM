@@ -1,0 +1,31 @@
+# CQ2 - Which vendors invoiced us the most in 2025, by company code and in euros?
+#
+# Vendor   : a payee of class nvf:Vendor. Employees reimbursed through the payables
+#            ledger are payees too, but not vendors, so they are left out.
+# Invoiced : the amount credited to the vendor on payable invoices of fiscal year 2025,
+#            that is, the gross amount of the invoice including tax.
+# Reversed invoices are left out; their reversals are not invoices and never enter.
+# Euros    : nvf:amountInGroupCurrency, converted with the monthly rate of the posting period.
+# The two records of the same vendor (same tax ID) are one payee, so its invoices add up.
+
+PREFIX nvf:     <https://nordvia.com/ontology/finance#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX foaf:    <http://xmlns.com/foaf/0.1/>
+
+SELECT ?company ?vendorNumber ?vendorName (COUNT(DISTINCT ?invoice) AS ?invoices) (SUM(?euros) AS ?invoicedEur)
+WHERE {
+  ?invoice a nvf:PayableInvoice ;
+           nvf:fiscalYear 2025 ;
+           nvf:inCompany/dcterms:identifier ?company .
+  FILTER NOT EXISTS { ?invoice a nvf:ReversedDocument }
+
+  ?line nvf:lineItemOf ?invoice ;
+        nvf:payee ?vendor ;
+        nvf:postingSide nvf:Credit ;
+        nvf:amountInGroupCurrency ?euros .
+  ?vendor a nvf:Vendor ;
+          foaf:name ?vendorName .
+  BIND (STRAFTER(STR(?vendor), "/payee/") AS ?vendorNumber)
+}
+GROUP BY ?company ?vendorNumber ?vendorName
+ORDER BY ?company DESC(?invoicedEur)

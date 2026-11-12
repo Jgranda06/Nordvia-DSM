@@ -1,0 +1,9 @@
+posting_key_code,side,account_type,name
+01,Debit,CustomerAccountType,Invoice
+11,Credit,CustomerAccountType,Credit memo
+15,Credit,CustomerAccountType,Incoming payment
+21,Debit,PayeeAccountType,Credit memo
+25,Debit,PayeeAccountType,Outgoing payment
+31,Credit,PayeeAccountType,Invoice
+40,Debit,GLAccountType,Debit entry
+50,Credit,GLAccountType,Credit entry

@@ -1,0 +1,83 @@
+company,customerNumber,customerName,customerKind,currency,bucket,bucketOrder,amount,amountEur,items
+1000,0000100004,Meridian Distribuciones S.L.,Domestic Customer,EUR,Not yet due,0,7879.87,7879.87,2
+1000,0000100008,Maple Trading S.A.,Domestic Customer,EUR,Not yet due,0,4872.67,4872.67,1
+1000,0000100009,Nova Distribuciones S.L.U.,Domestic Customer,EUR,Not yet due,0,24968.91,24968.91,1
+1000,0000100014,Nexo Home S.A.,Domestic Customer,EUR,Not yet due,0,14614.2,14614.2,1
+1000,0000100014,Nexo Home S.A.,Domestic Customer,EUR,31-60 days overdue,31,44383.92,44383.92,2
+1000,0000100015,Alpha Trading S.L.U.,Domestic Customer,EUR,Not yet due,0,16964.27,16964.27,2
+1000,0000100019,Aurora Market S.L.,Domestic Customer,EUR,1-30 days overdue,1,13196.01,13196.01,1
+1000,0000100024,Crest Distribuciones S.L.,Domestic Customer,EUR,Not yet due,0,4978.1,4978.1,1
+1000,0000100024,Crest Distribuciones S.L.,Domestic Customer,EUR,1-30 days overdue,1,4769.01,4769.01,1
+1000,0000100025,Granite Brands S.L.,Domestic Customer,EUR,Open credits,999,-2392.06,-2392.06,1
+1000,0000100030,Prime Distribuciones S.A.,Domestic Customer,EUR,1-30 days overdue,1,10122.35,10122.35,1
+1000,0000100031,Iber Home S.A.,Domestic Customer,EUR,31-60 days overdue,31,2880.24,2880.24,1
+1000,0000100035,Silver Trading S.A.,Domestic Customer,EUR,1-30 days overdue,1,3114.42,3114.42,1
+1000,0000100035,Silver Trading S.A.,Domestic Customer,EUR,Over 90 days overdue,91,6958.99,6958.99,2
+1000,0000100039,Oak Comercial S.L.U.,Domestic Customer,EUR,Not yet due,0,2197.44,2197.44,1
+1000,0000100040,Prime Market S.A.,Domestic Customer,EUR,1-30 days overdue,1,5728.5,5728.5,1
+1000,0000100042,Prime Trading S.A.,Domestic Customer,EUR,Not yet due,0,53526.21,53526.21,6
+1000,0000100042,Prime Trading S.A.,Domestic Customer,EUR,Open credits,999,-1285.37,-1285.37,2
+1000,0000100044,Nexo Trading S.L.U.,Domestic Customer,EUR,Not yet due,0,12316.21,12316.21,1
+1000,0000100044,Nexo Trading S.L.U.,Domestic Customer,EUR,1-30 days overdue,1,12811.06,12811.06,1
+1000,0000100044,Nexo Trading S.L.U.,Domestic Customer,EUR,Open credits,999,-561.88,-561.88,1
+1000,0000100046,Bright Outlet S.L.U.,Domestic Customer,EUR,Over 90 days overdue,91,9498.97,9498.97,1
+1000,0000100047,Aurora Trading S.L.,Domestic Customer,EUR,Not yet due,0,19001.59,19001.59,1
+1000,0000100048,Meridian Wholesale S.A.,Domestic Customer,EUR,Not yet due,0,3875.42,3875.42,1
+1000,0000100051,Maple Market S.L.U.,Domestic Customer,EUR,Over 90 days overdue,91,8702.79,8702.79,1
+1000,0000100055,Crest Outlet S.L.U.,Domestic Customer,EUR,Not yet due,0,9899.49,9899.49,1
+1000,0000100059,Oak Stores SAS,Foreign Customer,EUR,Open credits,999,-992.77,-992.77,1
+1000,0000100060,Atlas Wholesale SAS,Foreign Customer,EUR,1-30 days overdue,1,6044.87,6044.87,1
+1000,0000100062,Bright Market SAS,Foreign Customer,EUR,31-60 days overdue,31,14128.89,14128.89,1
+1000,0000100062,Bright Market SAS,Foreign Customer,EUR,Over 90 days overdue,91,11329.14,11329.14,2
+1000,0000100066,Terra Market GmbH,Foreign Customer,EUR,Not yet due,0,6333.94,6333.94,1
+1000,0000100070,Aurora Comercial Lda.,Foreign Customer,EUR,Not yet due,0,6885.61,6885.61,2
+1000,0000100070,Aurora Comercial Lda.,Foreign Customer,EUR,Open credits,999,-905.07,-905.07,1
+1000,0000100072,Bright Stores S.r.l.,Foreign Customer,EUR,Not yet due,0,19762.5,19762.5,4
+1000,0000100072,Bright Stores S.r.l.,Foreign Customer,EUR,1-30 days overdue,1,3365.2,3365.2,1
+1000,0000100075,Luna Outlet Inc.,Foreign Customer,EUR,1-30 days overdue,1,7734.8,7734.8,1
+1000,0000100080,Silver Home Ltd.,Foreign Customer,EUR,1-30 days overdue,1,10965.22,10965.22,1
+1000,0000100999,,Unregistered Customer,EUR,1-30 days overdue,1,5468.66,5468.66,1
+1000,0000100999,,Unregistered Customer,EUR,31-60 days overdue,31,10984.26,10984.26,2
+2000,0000100082,Bright Outlet Corp.,Domestic Customer,USD,Not yet due,0,14518.82,12333.01,1
+2000,0000100083,Evergreen Distribuciones Corp.,Domestic Customer,USD,Open credits,999,-63.41,-54.6,1
+2000,0000100085,Coral Market Corp.,Domestic Customer,USD,Open credits,999,-1121.42,-998.68,1
+2000,0000100086,Silver Market Inc.,Domestic Customer,USD,Open credits,999,-1642.34,-1488.39,1
+2000,0000100088,Evergreen Stores LLC,Domestic Customer,USD,Not yet due,0,10214.86,8677.01,1
+2000,0000100090,Ember Wholesale LLC,Domestic Customer,USD,Not yet due,0,16837.64,14302.73,1
+2000,0000100091,Pioneer Trading Inc.,Domestic Customer,USD,Not yet due,0,5328.09,4588.02,2
+2000,0000100093,Prime Wholesale Corp.,Domestic Customer,USD,Not yet due,0,10703.55,9092.13,1
+2000,0000100096,Atlas Distribuciones Inc.,Domestic Customer,USD,61-90 days overdue,61,4738.81,4135.46,1
+2000,0000100096,Atlas Distribuciones Inc.,Domestic Customer,USD,Open credits,999,-1018.81,-877.3,1
+2000,0000100097,Meridian Distribuciones LLC,Domestic Customer,USD,1-30 days overdue,1,12874.89,11086.57,1
+2000,0000100100,Delta Wholesale Corp.,Domestic Customer,USD,Not yet due,0,14668.58,12460.22,3
+2000,0000100100,Delta Wholesale Corp.,Domestic Customer,USD,1-30 days overdue,1,32308.75,27821.07,2
+2000,0000100100,Delta Wholesale Corp.,Domestic Customer,USD,Over 90 days overdue,91,17754.77,16706.95,3
+2000,0000100102,Sol Brands Inc.,Domestic Customer,USD,Not yet due,0,33053.58,28077.36,1
+2000,0000100103,Bright Distribuciones LLC,Domestic Customer,USD,Not yet due,0,11236.85,9545.14,1
+2000,0000100105,Maple Outlet LLC,Domestic Customer,USD,Not yet due,0,3346.39,2881.58,1
+2000,0000100106,Evergreen Home Corp.,Domestic Customer,USD,31-60 days overdue,31,12518.97,10925.05,1
+2000,0000100106,Evergreen Home Corp.,Domestic Customer,USD,Over 90 days overdue,91,24171.86,21979.38,2
+2000,0000100107,Summit Retail Inc.,Domestic Customer,USD,Open credits,999,-171.18,-150.63,1
+2000,0000100108,Falcon Trading Corp.,Domestic Customer,USD,1-30 days overdue,1,5140.63,4486.12,1
+2000,0000100108,Falcon Trading Corp.,Domestic Customer,USD,31-60 days overdue,31,7326.99,6447.38,1
+2000,0000100108,Falcon Trading Corp.,Domestic Customer,USD,61-90 days overdue,61,17698.54,15761.43,1
+2000,0000100108,Falcon Trading Corp.,Domestic Customer,USD,Over 90 days overdue,91,8355.88,7723.42,1
+2000,0000100108,Falcon Trading Corp.,Domestic Customer,USD,Open credits,999,-3084.75,-2732.68,2
+2000,0000100110,Ember Market Corp.,Domestic Customer,USD,Not yet due,0,18129.31,15399.94,1
+2000,0000100111,Prime Distribuciones LLC,Domestic Customer,USD,Over 90 days overdue,91,16976.45,15472.06,3
+2000,0000100112,Summit Trading LLC,Domestic Customer,USD,Open credits,999,-759.67,-688.46,1
+2000,0000100113,Crest Trading Corp.,Domestic Customer,USD,1-30 days overdue,1,5579.35,4739.38,1
+2000,0000100116,Sol Wholesale Inc.,Domestic Customer,USD,1-30 days overdue,1,3620.67,3159.69,1
+2000,0000100116,Sol Wholesale Inc.,Domestic Customer,USD,Open credits,999,-544.01,-474.75,1
+2000,0000100118,Granite Wholesale LLC,Domestic Customer,USD,Open credits,999,-596.87,-507.01,1
+2000,0000100119,Northstar Comercial LLC,Domestic Customer,USD,Not yet due,0,20289.23,17234.69,1
+3000,0000100124,Crest Comercial Ltd.,Domestic Customer,GBP,31-60 days overdue,31,10033.69,11755.97,1
+3000,0000100125,Orion Stores PLC,Domestic Customer,GBP,31-60 days overdue,31,2149.52,2518.49,1
+3000,0000100125,Orion Stores PLC,Domestic Customer,GBP,Open credits,999,-1024.04,-1201.5,1
+3000,0000100135,Luna Brands Ltd.,Domestic Customer,GBP,Not yet due,0,2162.0,2529.63,1
+3000,0000100136,Aurora Wholesale PLC,Domestic Customer,GBP,Not yet due,0,15306.26,17908.94,1
+3000,0000100139,Iber Comercial Ltd.,Domestic Customer,GBP,1-30 days overdue,1,13269.89,15526.3,1
+3000,0000100139,Iber Comercial Ltd.,Domestic Customer,GBP,Open credits,999,-5823.51,-6891.91,4
+3000,0000100151,Granite Retail SAS,Foreign Customer,GBP,Not yet due,0,8971.86,10497.44,1
+3000,0000100152,Sol Brands SAS,Foreign Customer,GBP,Not yet due,0,4041.31,4728.49,1
+3000,0000100156,One-time customer,One-Time Customer,GBP,Open credits,999,-236.56,-281.08,1

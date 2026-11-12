@@ -1,0 +1,9 @@
+BSCHL,SHKZG,KOART,LTEXT
+01,S,D,Invoice
+11,H,D,Credit memo
+15,H,D,Incoming payment
+21,S,K,Credit memo
+25,S,K,Outgoing payment
+31,H,K,Invoice
+40,S,S,Debit entry
+50,H,S,Credit entry

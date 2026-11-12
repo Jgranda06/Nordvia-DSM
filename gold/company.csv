@@ -1,0 +1,4 @@
+company_code,legal_name,local_currency,local_currency_iri,language_tag,chart_of_accounts_code,fiscal_year_variant,address_id
+1000,Nordvia Retail Iberia S.L.,EUR,https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/Euro,es,NVCA,K4,company-1000
+2000,Nordvia Retail US Inc.,USD,https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/USDollar,en,NVCA,K4,company-2000
+3000,Nordvia Retail UK Ltd.,GBP,https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/PoundSterling,en,NVCA,K4,company-3000

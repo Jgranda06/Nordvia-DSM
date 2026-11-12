@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nordvia · Finance knowledge graph</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="side">
+      <a class="brand" href="#/home">
+        <img src="logo.png" alt="Nordvia compass logo">
+        <div><b>Nordvia</b><span>Finance knowledge graph</span></div>
+      </a>
+      <nav class="nav" id="nav"></nav>
+      <div class="side-foot">SAP FI · fiscal year 2025<br>Read-only SPARQL over RDF</div>
+    </aside>
+    <main class="main">
+      <header class="top">
+        <div class="crumb" id="crumb"></div>
+        <div class="pill" id="status"><span class="dot"></span><span>Connecting…</span></div>
+      </header>
+      <div class="view" id="view"></div>
+    </main>
+  </div>
+  <div id="tip" role="tooltip"></div>
+  <script src="app.js"></script>
+</body>
+</html>

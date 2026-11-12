@@ -1,0 +1,231 @@
+address_id,owner_type,owner_id,city,postal_code,country
+company-1000,company,1000,Barcelona,,ES
+company-2000,company,2000,Chicago,,US
+company-3000,company,3000,Manchester,,GB
+customer-0000100001,customer,0000100001,Bilbao,48001,ES
+customer-0000100002,customer,0000100002,Barcelona,08001,ES
+customer-0000100003,customer,0000100003,Bilbao,48001,ES
+customer-0000100004,customer,0000100004,Barcelona,08001,ES
+customer-0000100005,customer,0000100005,Bilbao,48001,ES
+customer-0000100006,customer,0000100006,Zaragoza,50001,ES
+customer-0000100007,customer,0000100007,Barcelona,08001,ES
+customer-0000100008,customer,0000100008,Barcelona,08001,ES
+customer-0000100009,customer,0000100009,Sevilla,41001,ES
+customer-0000100010,customer,0000100010,Zaragoza,50001,ES
+customer-0000100011,customer,0000100011,Sevilla,41001,ES
+customer-0000100012,customer,0000100012,Barcelona,08001,ES
+customer-0000100013,customer,0000100013,Madrid,28001,ES
+customer-0000100014,customer,0000100014,Zaragoza,50001,ES
+customer-0000100015,customer,0000100015,Valencia,46001,ES
+customer-0000100016,customer,0000100016,Valencia,46001,ES
+customer-0000100017,customer,0000100017,Madrid,28001,ES
+customer-0000100018,customer,0000100018,Zaragoza,50001,ES
+customer-0000100019,customer,0000100019,Barcelona,08001,ES
+customer-0000100020,customer,0000100020,Zaragoza,50001,ES
+customer-0000100021,customer,0000100021,Zaragoza,50001,ES
+customer-0000100022,customer,0000100022,Málaga,29001,ES
+customer-0000100023,customer,0000100023,Bilbao,48001,ES
+customer-0000100024,customer,0000100024,Sevilla,41001,ES
+customer-0000100025,customer,0000100025,Sevilla,41001,ES
+customer-0000100026,customer,0000100026,Valencia,46001,ES
+customer-0000100027,customer,0000100027,Madrid,28001,ES
+customer-0000100028,customer,0000100028,Zaragoza,50001,ES
+customer-0000100029,customer,0000100029,Zaragoza,50001,ES
+customer-0000100030,customer,0000100030,Zaragoza,50001,ES
+customer-0000100031,customer,0000100031,Bilbao,48001,ES
+customer-0000100032,customer,0000100032,Valencia,46001,ES
+customer-0000100033,customer,0000100033,Sevilla,41001,ES
+customer-0000100034,customer,0000100034,Valencia,46001,ES
+customer-0000100035,customer,0000100035,Bilbao,48001,ES
+customer-0000100036,customer,0000100036,Barcelona,08001,ES
+customer-0000100037,customer,0000100037,Madrid,28001,ES
+customer-0000100038,customer,0000100038,Bilbao,48001,ES
+customer-0000100039,customer,0000100039,Málaga,29001,ES
+customer-0000100040,customer,0000100040,Barcelona,08001,ES
+customer-0000100041,customer,0000100041,Barcelona,08001,ES
+customer-0000100042,customer,0000100042,Madrid,28001,ES
+customer-0000100043,customer,0000100043,Zaragoza,50001,ES
+customer-0000100044,customer,0000100044,Madrid,28001,ES
+customer-0000100045,customer,0000100045,Valencia,46001,ES
+customer-0000100046,customer,0000100046,Madrid,28001,ES
+customer-0000100047,customer,0000100047,Bilbao,48001,ES
+customer-0000100048,customer,0000100048,Málaga,29001,ES
+customer-0000100049,customer,0000100049,Valencia,46001,ES
+customer-0000100050,customer,0000100050,Zaragoza,50001,ES
+customer-0000100051,customer,0000100051,Valencia,46001,ES
+customer-0000100052,customer,0000100052,Zaragoza,50001,ES
+customer-0000100053,customer,0000100053,Madrid,28001,ES
+customer-0000100054,customer,0000100054,Madrid,28001,ES
+customer-0000100055,customer,0000100055,Zaragoza,50001,ES
+customer-0000100056,customer,0000100056,Madrid,28001,ES
+customer-0000100057,customer,0000100057,Bilbao,48001,ES
+customer-0000100058,customer,0000100058,Sevilla,41001,ES
+customer-0000100059,customer,0000100059,Lyon,69001,FR
+customer-0000100060,customer,0000100060,Paris,75001,FR
+customer-0000100061,customer,0000100061,Paris,75001,FR
+customer-0000100062,customer,0000100062,Lyon,69001,FR
+customer-0000100063,customer,0000100063,Paris,75001,FR
+customer-0000100064,customer,0000100064,Hamburg,20095,DE
+customer-0000100065,customer,0000100065,Berlin,10115,DE
+customer-0000100066,customer,0000100066,Berlin,10115,DE
+customer-0000100067,customer,0000100067,Berlin,10115,DE
+customer-0000100068,customer,0000100068,Porto,4000-007,PT
+customer-0000100069,customer,0000100069,Porto,4000-007,PT
+customer-0000100070,customer,0000100070,Porto,4000-007,PT
+customer-0000100071,customer,0000100071,Lisboa,1100-148,PT
+customer-0000100072,customer,0000100072,Milano,20121,IT
+customer-0000100073,customer,0000100073,Milano,20121,IT
+customer-0000100074,customer,0000100074,Miami,33101,US
+customer-0000100075,customer,0000100075,Seattle,98101,US
+customer-0000100076,customer,0000100076,Denver,80201,US
+customer-0000100077,customer,0000100077,Chicago,60601,US
+customer-0000100078,customer,0000100078,New York,10001,US
+customer-0000100079,customer,0000100079,London,EC1A 1BB,GB
+customer-0000100080,customer,0000100080,London,EC1A 1BB,GB
+customer-0000100081,customer,0000100081,Austin,73301,US
+customer-0000100082,customer,0000100082,New York,10001,US
+customer-0000100083,customer,0000100083,Chicago,60601,US
+customer-0000100084,customer,0000100084,Austin,73301,US
+customer-0000100085,customer,0000100085,Miami,33101,US
+customer-0000100086,customer,0000100086,Chicago,60601,US
+customer-0000100087,customer,0000100087,Miami,33101,US
+customer-0000100088,customer,0000100088,Miami,33101,US
+customer-0000100089,customer,0000100089,Austin,73301,US
+customer-0000100090,customer,0000100090,Miami,33101,US
+customer-0000100091,customer,0000100091,Miami,33101,US
+customer-0000100092,customer,0000100092,Chicago,60601,US
+customer-0000100093,customer,0000100093,Seattle,98101,US
+customer-0000100094,customer,0000100094,Austin,73301,US
+customer-0000100095,customer,0000100095,Seattle,98101,US
+customer-0000100096,customer,0000100096,Seattle,98101,US
+customer-0000100097,customer,0000100097,Denver,80201,US
+customer-0000100098,customer,0000100098,Seattle,98101,US
+customer-0000100099,customer,0000100099,Chicago,60601,US
+customer-0000100100,customer,0000100100,New York,10001,US
+customer-0000100101,customer,0000100101,Denver,80201,US
+customer-0000100102,customer,0000100102,Chicago,60601,US
+customer-0000100103,customer,0000100103,Chicago,60601,US
+customer-0000100104,customer,0000100104,Denver,80201,US
+customer-0000100105,customer,0000100105,Austin,73301,US
+customer-0000100106,customer,0000100106,Austin,73301,US
+customer-0000100107,customer,0000100107,Austin,73301,US
+customer-0000100108,customer,0000100108,Austin,73301,US
+customer-0000100109,customer,0000100109,Chicago,60601,US
+customer-0000100110,customer,0000100110,Miami,33101,US
+customer-0000100111,customer,0000100111,Seattle,98101,US
+customer-0000100112,customer,0000100112,Miami,33101,US
+customer-0000100113,customer,0000100113,Seattle,98101,US
+customer-0000100114,customer,0000100114,New York,10001,US
+customer-0000100115,customer,0000100115,Seattle,98101,US
+customer-0000100116,customer,0000100116,Chicago,60601,US
+customer-0000100117,customer,0000100117,Miami,33101,US
+customer-0000100118,customer,0000100118,Chicago,60601,US
+customer-0000100119,customer,0000100119,Denver,80201,US
+customer-0000100120,customer,0000100120,Denver,80201,US
+customer-0000100121,customer,0000100121,New York,10001,US
+customer-0000100122,customer,0000100122,Denver,80201,US
+customer-0000100123,customer,0000100123,Glasgow,G1 1XQ,GB
+customer-0000100124,customer,0000100124,Bristol,BS1 4DJ,GB
+customer-0000100125,customer,0000100125,Glasgow,G1 1XQ,GB
+customer-0000100126,customer,0000100126,Manchester,M1 1AA,GB
+customer-0000100127,customer,0000100127,Glasgow,G1 1XQ,GB
+customer-0000100128,customer,0000100128,Manchester,M1 1AA,GB
+customer-0000100129,customer,0000100129,Leeds,LS1 1UR,GB
+customer-0000100130,customer,0000100130,Leeds,LS1 1UR,GB
+customer-0000100131,customer,0000100131,London,EC1A 1BB,GB
+customer-0000100132,customer,0000100132,Leeds,LS1 1UR,GB
+customer-0000100133,customer,0000100133,Manchester,M1 1AA,GB
+customer-0000100134,customer,0000100134,Glasgow,G1 1XQ,GB
+customer-0000100135,customer,0000100135,Bristol,BS1 4DJ,GB
+customer-0000100136,customer,0000100136,London,EC1A 1BB,GB
+customer-0000100137,customer,0000100137,Glasgow,G1 1XQ,GB
+customer-0000100138,customer,0000100138,Bristol,BS1 4DJ,GB
+customer-0000100139,customer,0000100139,London,EC1A 1BB,GB
+customer-0000100140,customer,0000100140,Glasgow,G1 1XQ,GB
+customer-0000100141,customer,0000100141,Manchester,M1 1AA,GB
+customer-0000100142,customer,0000100142,Glasgow,G1 1XQ,GB
+customer-0000100143,customer,0000100143,Bristol,BS1 4DJ,GB
+customer-0000100144,customer,0000100144,Bristol,BS1 4DJ,GB
+customer-0000100145,customer,0000100145,London,EC1A 1BB,GB
+customer-0000100146,customer,0000100146,London,EC1A 1BB,GB
+customer-0000100147,customer,0000100147,Glasgow,G1 1XQ,GB
+customer-0000100148,customer,0000100148,London,EC1A 1BB,GB
+customer-0000100149,customer,0000100149,Manchester,M1 1AA,GB
+customer-0000100150,customer,0000100150,Glasgow,G1 1XQ,GB
+customer-0000100151,customer,0000100151,Lyon,69001,FR
+customer-0000100152,customer,0000100152,Lyon,69001,FR
+customer-0000100153,customer,0000100153,Berlin,10115,DE
+customer-0000100154,customer,0000100154,,,ES
+customer-0000100155,customer,0000100155,,,US
+customer-0000100156,customer,0000100156,,,GB
+payee-0000200001,payee,0000200001,Sevilla,41001,ES
+payee-0000200002,payee,0000200002,Valencia,46001,ES
+payee-0000200003,payee,0000200003,Sevilla,41001,ES
+payee-0000200004,payee,0000200004,Bilbao,48001,ES
+payee-0000200005,payee,0000200005,Bilbao,48001,ES
+payee-0000200006,payee,0000200006,Sevilla,41001,ES
+payee-0000200007,payee,0000200007,Málaga,29001,ES
+payee-0000200008,payee,0000200008,Zaragoza,50001,ES
+payee-0000200009,payee,0000200009,Zaragoza,50001,ES
+payee-0000200010,payee,0000200010,Sevilla,41001,ES
+payee-0000200011,payee,0000200011,Valencia,46001,ES
+payee-0000200012,payee,0000200012,Zaragoza,50001,ES
+payee-0000200013,payee,0000200013,Valencia,46001,ES
+payee-0000200014,payee,0000200014,Madrid,28001,ES
+payee-0000200015,payee,0000200015,Zaragoza,50001,ES
+payee-0000200016,payee,0000200016,Sevilla,41001,ES
+payee-0000200017,payee,0000200017,Valencia,46001,ES
+payee-0000200018,payee,0000200018,Bilbao,48001,ES
+payee-0000200019,payee,0000200019,Sevilla,41001,ES
+payee-0000200020,payee,0000200020,Madrid,28001,ES
+payee-0000200021,payee,0000200021,Valencia,46001,ES
+payee-0000200022,payee,0000200022,Valencia,46001,ES
+payee-0000200023,payee,0000200023,Málaga,29001,ES
+payee-0000200024,payee,0000200024,Sevilla,41001,ES
+payee-0000200025,payee,0000200025,Barcelona,08001,ES
+payee-0000200026,payee,0000200026,Porto,4000-007,PT
+payee-0000200027,payee,0000200027,Hamburg,20095,DE
+payee-0000200028,payee,0000200028,Chicago,60601,US
+payee-0000200029,payee,0000200029,Seattle,98101,US
+payee-0000200030,payee,0000200030,Denver,80201,US
+payee-0000200031,payee,0000200031,Chicago,60601,US
+payee-0000200032,payee,0000200032,Chicago,60601,US
+payee-0000200033,payee,0000200033,Miami,33101,US
+payee-0000200034,payee,0000200034,Miami,33101,US
+payee-0000200035,payee,0000200035,Seattle,98101,US
+payee-0000200036,payee,0000200036,Denver,80201,US
+payee-0000200037,payee,0000200037,Denver,80201,US
+payee-0000200038,payee,0000200038,Seattle,98101,US
+payee-0000200039,payee,0000200039,Denver,80201,US
+payee-0000200040,payee,0000200040,New York,10001,US
+payee-0000200041,payee,0000200041,Miami,33101,US
+payee-0000200042,payee,0000200042,Chicago,60601,US
+payee-0000200043,payee,0000200043,Austin,73301,US
+payee-0000200044,payee,0000200044,Seattle,98101,US
+payee-0000200045,payee,0000200045,New York,10001,US
+payee-0000200046,payee,0000200046,Chicago,60601,US
+payee-0000200047,payee,0000200047,Denver,80201,US
+payee-0000200048,payee,0000200048,Austin,73301,US
+payee-0000200049,payee,0000200049,Austin,73301,US
+payee-0000200050,payee,0000200050,Glasgow,G1 1XQ,GB
+payee-0000200051,payee,0000200051,Leeds,LS1 1UR,GB
+payee-0000200052,payee,0000200052,Glasgow,G1 1XQ,GB
+payee-0000200053,payee,0000200053,Manchester,M1 1AA,GB
+payee-0000200054,payee,0000200054,Glasgow,G1 1XQ,GB
+payee-0000200055,payee,0000200055,Manchester,M1 1AA,GB
+payee-0000200056,payee,0000200056,Bristol,BS1 4DJ,GB
+payee-0000200057,payee,0000200057,Glasgow,G1 1XQ,GB
+payee-0000200058,payee,0000200058,Manchester,M1 1AA,GB
+payee-0000200059,payee,0000200059,Bristol,BS1 4DJ,GB
+payee-0000200060,payee,0000200060,Glasgow,G1 1XQ,GB
+payee-0000200061,payee,0000200061,Leeds,LS1 1UR,GB
+payee-0000200062,payee,0000200062,London,EC1A 1BB,GB
+payee-0000200063,payee,0000200063,Manchester,M1 1AA,GB
+payee-0000200064,payee,0000200064,London,EC1A 1BB,GB
+payee-0000200065,payee,0000200065,Chicago,60601,US
+payee-0000200066,payee,0000200066,Zaragoza,50001,ES
+payee-0000200067,payee,0000200067,Bilbao,48001,ES
+payee-0000200068,payee,0000200068,Austin,73301,US
+payee-0000200069,payee,0000200069,Chicago,60601,US
+payee-0000200070,payee,0000200070,Bristol,BS1 4DJ,GB
+payee-0000200071,payee,0000200071,Manchester,M1 1AA,GB

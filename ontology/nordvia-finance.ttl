@@ -1,0 +1,1687 @@
+@prefix : <https://nordvia.com/ontology/finance#> .
+@prefix nvf: <https://nordvia.com/ontology/finance#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rov: <http://www.w3.org/ns/regorg#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix schema: <https://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix fibo-fm: <https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/> .
+@prefix cmns-org: <https://www.omg.org/spec/Commons/Organizations/> .
+@prefix fibo-cur: <https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/> .
+@prefix fibo-pas: <https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/> .
+@prefix fibo-4217: <https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/> .
+@prefix fibo-psch: <https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/> .
+@base <https://nordvia.com/ontology/finance#> .
+
+<https://nordvia.com/ontology/finance> rdf:type owl:Ontology ;
+                                        owl:imports <http://www.w3.org/2004/02/skos/core> ,
+                                                    <http://www.w3.org/ns/regorg> ,
+                                                    org: ;
+                                        dcterms:creator "Javier Granda" ;
+                                        dcterms:issued "2026-11-09"^^xsd:date ;
+                                        dcterms:license "Nordvia" ;
+                                        dcterms:modified "2026-11-09"^^xsd:date ;
+                                        dcterms:publisher "Nordvia" ;
+                                        rdfs:label "Nordvia Finance Ontology"@en ;
+                                        owl:versionInfo "1.0" ;
+                                        skos:altLabel "NVF Ontology"@en ;
+                                        skos:definition "A semantic model of the financial accounting of a retail group, covering accounting documents and their line items, business partners, general ledger accounts, organisational units and cost centres, and currency exchange rates."@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty ;
+                skos:definition "The person who wrote the ontology."@en .
+
+
+###  http://purl.org/dc/terms/issued
+dcterms:issued rdf:type owl:AnnotationProperty ;
+               skos:definition "The date the ontology was created and first released."@en .
+
+
+###  http://purl.org/dc/terms/license
+dcterms:license rdf:type owl:AnnotationProperty ;
+                skos:definition "The terms under which the ontology may be used."@en .
+
+
+###  http://purl.org/dc/terms/modified
+dcterms:modified rdf:type owl:AnnotationProperty ;
+                 skos:definition "The date the ontology was last changed."@en .
+
+
+###  http://purl.org/dc/terms/publisher
+dcterms:publisher rdf:type owl:AnnotationProperty ;
+                  skos:definition "The organisation that publishes the ontology."@en .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdfs:comment "A human-readable name for the subject." ;
+           rdfs:isDefinedBy rdfs: ;
+           rdfs:label "label" .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+skos:altLabel rdf:type owl:AnnotationProperty ;
+              skos:definition "A secondary or abbreviated name of an entry."@en ;
+              skos:scopeNote "Used for the truncated short texts."@en ;
+              nvf:sourceField "CSKS.KTEXT" ,
+                              "SKAT.TXT20" .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty ;
+                skos:definition "A statement of what a term means."@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty ;
+               skos:definition "The main name of an entry, one per language."@en ;
+               skos:scopeNote "Account names come in English and Spanish; the SAP language key (E, S) becomes the language tag of the label."@en ;
+               nvf:sourceField "CSKS.LTEXT" ,
+                               "SKAT.SPRAS" ,
+                               "SKAT.TXT50" ,
+                               "T003.LTEXT" ,
+                               "TBSL.LTEXT" .
+
+
+###  http://www.w3.org/2004/02/skos/core#scopeNote
+skos:scopeNote rdf:type owl:AnnotationProperty ;
+               skos:definition "A note on how a term is used here, or on what it does and does not cover."@en .
+
+
+###  https://nordvia.com/ontology/finance#sourceField
+nvf:sourceField rdf:type owl:AnnotationProperty ;
+                rdfs:label "source field"@en ;
+                skos:definition "SAP table and field a term is populated from, written TABLE.FIELD."@en .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/dc/terms/isPartOf
+dcterms:isPartOf rdf:type owl:ObjectProperty ;
+                 skos:definition "The larger thing that something is a part of."@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+skos:inScheme rdf:type owl:ObjectProperty ;
+              skos:definition "The controlled list an entry belongs to."@en ;
+              skos:scopeNote "Links a G/L account to its chart of accounts."@en ;
+              nvf:sourceField "SKA1.KTOPL" ,
+                              "SKAT.KTOPL" .
+
+
+###  http://www.w3.org/ns/locn#address
+locn:address rdf:type owl:ObjectProperty ;
+             rdfs:range locn:Address ;
+             skos:definition "The address of a company, customer or payee."@en ;
+             skos:scopeNote "Companies, customers and payees each get one address node holding city, postal code and country."@en .
+
+
+###  http://www.w3.org/ns/org#unitOf
+org:unitOf rdf:type owl:ObjectProperty ;
+           skos:definition "The organisation that an organisational unit is part of."@en ;
+           skos:scopeNote "Links a cost center to the company it belongs to."@en ;
+           nvf:sourceField "CSKS.BUKRS" .
+
+
+###  https://nordvia.com/ontology/finance#accountCurrency
+nvf:accountCurrency rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf fibo-cur:hasCurrency ;
+                    rdf:type owl:FunctionalProperty ;
+                    rdfs:domain nvf:CompanyAccount ;
+                    rdfs:range fibo-cur:Currency ;
+                    rdfs:label "account currency"@en ;
+                    skos:definition "The currency in which a company keeps a given G/L account."@en ;
+                    nvf:sourceField "SKB1.WAERS" .
+
+
+###  https://nordvia.com/ontology/finance#accountType
+nvf:accountType rdf:type owl:ObjectProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:range nvf:AccountType ;
+                rdfs:label "account type"@en ;
+                skos:definition "The kind of account a line item goes to, or that a posting key is meant for: customer, payee or G/L."@en ;
+                nvf:sourceField "BSEG.KOART" ,
+                                "TBSL.KOART" .
+
+
+###  https://nordvia.com/ontology/finance#chartOfAccounts
+nvf:chartOfAccounts rdf:type owl:ObjectProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain nvf:Company ;
+                    rdfs:range nvf:ChartOfAccounts ;
+                    rdfs:label "chart of accounts"@en ;
+                    skos:definition "The chart of accounts a company posts to."@en ;
+                    nvf:sourceField "T001.KTOPL" .
+
+
+###  https://nordvia.com/ontology/finance#clearedBy
+nvf:clearedBy rdf:type owl:ObjectProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain nvf:LineItem ;
+              rdfs:range nvf:AccountingDocument ;
+              rdfs:label "cleared by"@en ;
+              skos:definition "The document, usually a payment, that settled an open item."@en ;
+              skos:scopeNote "The source gives only a document number. The clearing document is looked up in the same company, in the fiscal year of the clearing date."@en ;
+              nvf:sourceField "BSEG.AUGBL" .
+
+
+###  https://nordvia.com/ontology/finance#controllingArea
+nvf:controllingArea rdf:type owl:ObjectProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain nvf:CostCenter ;
+                    rdfs:range nvf:ControllingArea ;
+                    rdfs:label "controlling area"@en ;
+                    skos:definition "The controlling area a cost center is maintained under."@en ;
+                    nvf:sourceField "CSKS.KOKRS" .
+
+
+###  https://nordvia.com/ontology/finance#costCenter
+nvf:costCenter rdf:type owl:ObjectProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain nvf:LineItem ;
+               rdfs:range nvf:CostCenter ;
+               rdfs:label "cost center"@en ;
+               skos:definition "The cost center that absorbs the amount of a line item."@en ;
+               nvf:sourceField "BSEG.KOSTL" .
+
+
+###  https://nordvia.com/ontology/finance#costCenterCategory
+nvf:costCenterCategory rdf:type owl:ObjectProperty ,
+                                owl:FunctionalProperty ;
+                       rdfs:domain nvf:CostCenter ;
+                       rdfs:range nvf:CostCenterCategory ;
+                       rdfs:label "cost center category"@en ;
+                       skos:definition "The kind of activity a cost center carries out: administration, service or sales."@en ;
+                       nvf:sourceField "CSKS.KOSAR" .
+
+
+###  https://nordvia.com/ontology/finance#creditFor
+nvf:creditFor rdf:type owl:ObjectProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain nvf:CustomerCreditMemo ;
+              rdfs:range nvf:CustomerInvoice ;
+              rdfs:label "credit for"@en ;
+              skos:definition "The invoice that a credit memo reduces."@en ;
+              skos:scopeNote "On a credit memo the reference field holds the document number of the invoice it relates to, in the same company."@en ;
+              nvf:sourceField "BKPF.XBLNR" .
+
+
+###  https://nordvia.com/ontology/finance#customer
+nvf:customer rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain nvf:LineItem ;
+             rdfs:range nvf:Customer ;
+             rdfs:label "customer"@en ;
+             skos:definition "The customer whose account a line item is posted to."@en ;
+             nvf:sourceField "BSEG.KUNNR" .
+
+
+###  https://nordvia.com/ontology/finance#derivationMethod
+nvf:derivationMethod rdf:type owl:ObjectProperty ,
+                              owl:FunctionalProperty ;
+                     rdfs:domain nvf:MonthlyExchangeRate ;
+                     rdfs:range nvf:RateDerivationMethod ;
+                     rdfs:label "derivation method"@en ;
+                     skos:definition "How a monthly exchange rate was obtained from the documents of that month."@en .
+
+
+###  https://nordvia.com/ontology/finance#documentCurrency
+nvf:documentCurrency rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf fibo-cur:hasCurrency ;
+                     rdf:type owl:FunctionalProperty ;
+                     rdfs:domain nvf:AccountingDocument ;
+                     rdfs:range fibo-cur:Currency ;
+                     rdfs:label "document currency"@en ;
+                     skos:definition "The currency the document was issued in."@en ;
+                     nvf:sourceField "BKPF.WAERS" .
+
+
+###  https://nordvia.com/ontology/finance#documentType
+nvf:documentType rdf:type owl:ObjectProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain nvf:AccountingDocument ;
+                 rdfs:range nvf:DocumentType ;
+                 rdfs:label "document type"@en ;
+                 skos:definition "The SAP document type an accounting document was posted with."@en ;
+                 nvf:sourceField "BKPF.BLART" .
+
+
+###  https://nordvia.com/ontology/finance#fromCurrency
+nvf:fromCurrency rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf fibo-cur:hasCurrency ;
+                 rdf:type owl:FunctionalProperty ;
+                 rdfs:domain nvf:MonthlyExchangeRate ;
+                 rdfs:range fibo-cur:Currency ;
+                 rdfs:label "from currency"@en ;
+                 skos:definition "The currency an exchange rate converts from; one unit of it is worth the rate in the target currency."@en .
+
+
+###  https://nordvia.com/ontology/finance#glAccount
+nvf:glAccount rdf:type owl:ObjectProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:range nvf:GLAccount ;
+              rdfs:label "general ledger account"@en ;
+              skos:definition "The general ledger account a line is posted to, or that a company account sets up."@en ;
+              skos:scopeNote "On customer and payee lines this is the reconciliation account."@en ;
+              nvf:sourceField "BSEG.HKONT" ,
+                              "SKB1.SAKNR" .
+
+
+###  https://nordvia.com/ontology/finance#hasLineItem
+nvf:hasLineItem rdf:type owl:ObjectProperty ;
+                owl:inverseOf nvf:lineItemOf ;
+                rdfs:label "has line item"@en ;
+                skos:definition "A line item contained in an accounting document."@en .
+
+
+###  https://nordvia.com/ontology/finance#inCompany
+nvf:inCompany rdf:type owl:ObjectProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:range nvf:Company ;
+              rdfs:label "in company"@en ;
+              skos:definition "The company in whose books a document is posted or an account is set up."@en ;
+              nvf:sourceField "BKPF.BUKRS" ,
+                              "SKB1.BUKRS" .
+
+
+###  https://nordvia.com/ontology/finance#lineItemOf
+nvf:lineItemOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf dcterms:isPartOf ;
+               rdf:type owl:FunctionalProperty ;
+               rdfs:domain nvf:LineItem ;
+               rdfs:range nvf:AccountingDocument ;
+               rdfs:label "line item of"@en ;
+               skos:definition "The accounting document a line item belongs to."@en ;
+               nvf:sourceField "BSEG.BELNR" ,
+                               "BSEG.BUKRS" ,
+                               "BSEG.GJAHR" .
+
+
+###  https://nordvia.com/ontology/finance#localCurrency
+nvf:localCurrency rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf fibo-cur:hasCurrency ;
+                  rdf:type owl:FunctionalProperty ;
+                  rdfs:domain nvf:Company ;
+                  rdfs:range fibo-cur:Currency ;
+                  rdfs:label "local currency"@en ;
+                  skos:definition "The currency a company keeps its books in."@en ;
+                  nvf:sourceField "T001.WAERS" .
+
+
+###  https://nordvia.com/ontology/finance#payee
+nvf:payee rdf:type owl:ObjectProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain nvf:LineItem ;
+          rdfs:range nvf:Payee ;
+          rdfs:label "payee"@en ;
+          skos:definition "The vendor or employee whose payables account a line item is posted to."@en ;
+          nvf:sourceField "BSEG.LIFNR" .
+
+
+###  https://nordvia.com/ontology/finance#paymentTerms
+nvf:paymentTerms rdf:type owl:ObjectProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:range nvf:PaymentTerms ;
+                 rdfs:label "payment terms"@en ;
+                 skos:definition "The payment terms agreed with a customer or payee, or those that apply to one line item."@en ;
+                 skos:scopeNote "The terms on a line item are used to date that item. The terms agreed with a customer or payee are the ones on its master record: invoice lines always repeat them, while credit memos are posted as payable immediately whatever the master says."@en ;
+                 nvf:sourceField "BSEG.ZTERM" ,
+                                 "KNA1.ZTERM" ,
+                                 "LFA1.ZTERM" .
+
+
+###  https://nordvia.com/ontology/finance#postingKey
+nvf:postingKey rdf:type owl:ObjectProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain nvf:LineItem ;
+               rdfs:range nvf:PostingKey ;
+               rdfs:label "posting key"@en ;
+               skos:definition "The posting key a line item was entered with."@en ;
+               nvf:sourceField "BSEG.BSCHL" .
+
+
+###  https://nordvia.com/ontology/finance#postingSide
+nvf:postingSide rdf:type owl:ObjectProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:range nvf:DebitCreditIndicator ;
+                rdfs:label "posting side"@en ;
+                skos:definition "The side a line item is posted on, or the side a posting key always posts to."@en ;
+                nvf:sourceField "BSEG.SHKZG" ,
+                                "TBSL.SHKZG" .
+
+
+###  https://nordvia.com/ontology/finance#reversedBy
+nvf:reversedBy rdf:type owl:ObjectProperty ;
+               owl:inverseOf nvf:reverses ;
+               rdfs:domain nvf:AccountingDocument ;
+               rdfs:range nvf:ReversalDocument ;
+               rdfs:label "reversed by"@en ;
+               skos:definition "The reversal document that cancels this one."@en ;
+               nvf:sourceField "BKPF.STBLG" ,
+                               "BKPF.STJAH" .
+
+
+###  https://nordvia.com/ontology/finance#reverses
+nvf:reverses rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain nvf:ReversalDocument ;
+             rdfs:range nvf:AccountingDocument ;
+             rdfs:label "reverses"@en ;
+             skos:definition "The original document a reversal cancels."@en ;
+             skos:scopeNote "SAP stores the link on both documents in the same pair of fields. On a reversal document (type AB) it is read as 'reverses', on any other type as 'reversed by'."@en ;
+             nvf:sourceField "BKPF.STBLG" ,
+                             "BKPF.STJAH" .
+
+
+###  https://nordvia.com/ontology/finance#taxCode
+nvf:taxCode rdf:type owl:ObjectProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain nvf:LineItem ;
+            rdfs:range nvf:TaxCode ;
+            rdfs:label "tax code"@en ;
+            skos:definition "The tax code that applies to a line item."@en ;
+            nvf:sourceField "BSEG.MWSKZ" .
+
+
+###  https://nordvia.com/ontology/finance#toCurrency
+nvf:toCurrency rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf fibo-cur:hasCurrency ;
+               rdf:type owl:FunctionalProperty ;
+               rdfs:domain nvf:MonthlyExchangeRate ;
+               rdfs:range fibo-cur:Currency ;
+               rdfs:label "to currency"@en ;
+               skos:definition "The currency an exchange rate converts into. Here it is always the euro."@en .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/hasCurrency
+fibo-cur:hasCurrency rdf:type owl:ObjectProperty ;
+                     rdfs:range fibo-cur:Currency ;
+                     rdfs:isDefinedBy fibo-cur: ;
+                     rdfs:label "has currency"@en ;
+                     skos:definition "The currency in which something is denominated."@en ;
+                     skos:scopeNote "Parent of the three currency links used here: local currency of a company, currency of a company account and currency of a document."@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+dcterms:created rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf dcterms:date ;
+                rdfs:range xsd:dateTime ;
+                skos:definition "The date a record was created in the system."@en ;
+                nvf:sourceField "KNA1.ERDAT" ,
+                                "LFA1.ERDAT" ,
+                                "SKA1.ERDAT" .
+
+
+###  http://purl.org/dc/terms/date
+dcterms:date rdf:type owl:DatatypeProperty ;
+             skos:definition "A date associated with a record or an event in its life."@en ;
+             skos:scopeNote "Parent of every date property in this ontology, so that all the dates of a document or line can be asked for at once."@en .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:DatatypeProperty ;
+                    skos:definition "A free-text explanation attached to a document or to one of its lines."@en ;
+                    skos:scopeNote "Free text typed by the user on the document header or on a line."@en ;
+                    nvf:sourceField "BKPF.BKTXT" ,
+                                    "BSEG.SGTXT" .
+
+
+###  http://purl.org/dc/terms/identifier
+dcterms:identifier rdf:type owl:DatatypeProperty ;
+                   rdfs:range xsd:string ;
+                   skos:definition "The code or number that identifies a record in the source system."@en ;
+                   skos:scopeNote "The SAP key of a master record, kept as text because of the leading zeros. The same value is used to build the IRI of the instance."@en ;
+                   nvf:sourceField "CSKS.KOSTL" ,
+                                   "KNA1.KUNNR" ,
+                                   "LFA1.LIFNR" ,
+                                   "SKA1.SAKNR" ,
+                                   "SKAT.SAKNR" ,
+                                   "T001.BUKRS" .
+
+
+###  http://purl.org/dc/terms/language
+dcterms:language rdf:type owl:DatatypeProperty ;
+                 rdfs:range xsd:language ;
+                 skos:definition "The language a company works in."@en ;
+                 skos:scopeNote "Working language of a company: E becomes en, S becomes es."@en ;
+                 nvf:sourceField "T001.SPRAS" .
+
+
+###  http://www.w3.org/2004/02/skos/core#notation
+skos:notation rdf:type owl:DatatypeProperty ;
+              skos:definition "The short code that stands for an entry of a controlled list."@en ;
+              skos:scopeNote "The code of an entry in a code list: document type, posting key, payment terms, tax code."@en ;
+              nvf:sourceField "T003.BLART" ,
+                              "TBSL.BSCHL" .
+
+
+###  http://www.w3.org/ns/locn#adminUnitL1
+locn:adminUnitL1 rdf:type owl:DatatypeProperty ;
+                 skos:definition "The country of an address."@en ;
+                 skos:scopeNote "Country as an ISO 3166-1 alpha-2 code, upper case."@en ;
+                 nvf:sourceField "KNA1.LAND1" ,
+                                 "LFA1.LAND1" ,
+                                 "T001.LAND1" .
+
+
+###  http://www.w3.org/ns/locn#postCode
+locn:postCode rdf:type owl:DatatypeProperty ;
+              skos:definition "The postal code of an address."@en ;
+              nvf:sourceField "KNA1.PSTLZ" ,
+                              "LFA1.PSTLZ" .
+
+
+###  http://www.w3.org/ns/locn#postName
+locn:postName rdf:type owl:DatatypeProperty ;
+              skos:definition "The city or town of an address."@en ;
+              nvf:sourceField "KNA1.ORT01" ,
+                              "LFA1.ORT01" ,
+                              "T001.ORT01" .
+
+
+###  http://www.w3.org/ns/regorg#legalName
+rov:legalName rdf:type owl:DatatypeProperty ;
+              rdfs:range xsd:string ;
+              skos:definition "The name under which a company is officially registered."@en ;
+              nvf:sourceField "T001.BUTXT" .
+
+
+###  http://xmlns.com/foaf/0.1/name
+foaf:name rdf:type owl:DatatypeProperty ;
+          skos:definition "The name of a customer or payee as it appears on its master record."@en ;
+          nvf:sourceField "KNA1.NAME1" ,
+                          "LFA1.NAME1" .
+
+
+###  https://nordvia.com/ontology/finance#accountGroup
+nvf:accountGroup rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain nvf:GLAccount ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "account group"@en ;
+                 skos:definition "The SAP grouping of a G/L account (SAKO for balance sheet, ERGB for profit and loss)."@en ;
+                 nvf:sourceField "SKA1.KTOKS" .
+
+
+###  https://nordvia.com/ontology/finance#amountInDocumentCurrency
+nvf:amountInDocumentCurrency rdf:type owl:DatatypeProperty ,
+                                      owl:FunctionalProperty ;
+                             rdfs:domain nvf:LineItem ;
+                             rdfs:range xsd:decimal ;
+                             rdfs:label "amount in document currency"@en ;
+                             skos:definition "Unsigned amount of the line in the currency of its document."@en ;
+                             nvf:sourceField "BSEG.WRBTR" .
+
+
+###  https://nordvia.com/ontology/finance#amountInGroupCurrency
+nvf:amountInGroupCurrency rdf:type owl:DatatypeProperty ,
+                                   owl:FunctionalProperty ;
+                          rdfs:domain nvf:LineItem ;
+                          rdfs:range xsd:decimal ;
+                          rdfs:label "amount in group currency"@en ;
+                          skos:definition "Unsigned amount of the line in euros, the currency the group reports in."@en ;
+                          skos:scopeNote "Worked out when the graph is built: the amount in local currency converted with the monthly exchange rate of the posting period. For the company that keeps its books in euros it equals the local amount."@en .
+
+
+###  https://nordvia.com/ontology/finance#amountInLocalCurrency
+nvf:amountInLocalCurrency rdf:type owl:DatatypeProperty ,
+                                   owl:FunctionalProperty ;
+                          rdfs:domain nvf:LineItem ;
+                          rdfs:range xsd:decimal ;
+                          rdfs:label "amount in local currency"@en ;
+                          skos:definition "Unsigned amount of the line in the local currency of the company."@en ;
+                          skos:scopeNote "Group reporting in euros starts from this amount, not from the document amount."@en ;
+                          nvf:sourceField "BSEG.DMBTR" .
+
+
+###  https://nordvia.com/ontology/finance#baselineDate
+nvf:baselineDate rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf dcterms:date ;
+                 rdf:type owl:FunctionalProperty ;
+                 rdfs:domain nvf:LineItem ;
+                 rdfs:range xsd:dateTime ;
+                 rdfs:label "baseline date"@en ;
+                 skos:definition "Date from which the payment terms start counting. Due date = baseline date + net days."@en ;
+                 nvf:sourceField "BSEG.ZFBDT" .
+
+
+###  https://nordvia.com/ontology/finance#clearingDate
+nvf:clearingDate rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf dcterms:date ;
+                 rdf:type owl:FunctionalProperty ;
+                 rdfs:domain nvf:LineItem ;
+                 rdfs:range xsd:dateTime ;
+                 rdfs:label "clearing date"@en ;
+                 skos:definition "Date the open item was settled."@en ;
+                 nvf:sourceField "BSEG.AUGDT" .
+
+
+###  https://nordvia.com/ontology/finance#documentDate
+nvf:documentDate rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf dcterms:date ;
+                 rdf:type owl:FunctionalProperty ;
+                 rdfs:domain nvf:AccountingDocument ;
+                 rdfs:range xsd:dateTime ;
+                 rdfs:label "document date"@en ;
+                 skos:definition "Date printed on the original document, e.g. the invoice date."@en ;
+                 nvf:sourceField "BKPF.BLDAT" .
+
+
+###  https://nordvia.com/ontology/finance#documentNumber
+nvf:documentNumber rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain nvf:AccountingDocument ;
+                   rdfs:range xsd:string ;
+                   rdfs:label "document number"@en ;
+                   skos:definition "The number SAP assigned to an accounting document when it was posted."@en ;
+                   skos:scopeNote "Unique only together with company and fiscal year."@en ;
+                   nvf:sourceField "BKPF.BELNR" .
+
+
+###  https://nordvia.com/ontology/finance#documentsUsed
+nvf:documentsUsed rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain nvf:MonthlyExchangeRate ;
+                  rdfs:range xsd:integer ;
+                  rdfs:label "documents used"@en ;
+                  skos:definition "Number of foreign-currency documents of the period that a monthly exchange rate was worked out from."@en ;
+                  skos:scopeNote "A measure of how far the rate can be trusted: a rate resting on one document is a single quote, not an average. For a cross rate it adds up the documents of the two rates that were combined."@en .
+
+
+###  https://nordvia.com/ontology/finance#dueDate
+nvf:dueDate rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf dcterms:date ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain nvf:LineItem ;
+            rdfs:range xsd:dateTime ;
+            rdfs:label "due date"@en ;
+            rdfs:seeAlso schema:paymentDueDate ;
+            skos:definition "Date on which a customer or payee item falls due: its baseline date plus the net days of its payment terms."@en ;
+            skos:scopeNote "Worked out when the graph is built; it is not a field of the source. Days overdue are counted from this date to the key date."@en .
+
+
+###  https://nordvia.com/ontology/finance#enteredBy
+nvf:enteredBy rdf:type owl:DatatypeProperty ;
+              rdfs:range xsd:string ;
+              rdfs:label "entered by"@en ;
+              skos:definition "User name of whoever created the record or keyed in the document. Can be a batch job."@en ;
+              nvf:sourceField "BKPF.USNAM" ,
+                              "SKA1.ERNAM" .
+
+
+###  https://nordvia.com/ontology/finance#entryDate
+nvf:entryDate rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf dcterms:created ;
+              rdf:type owl:FunctionalProperty ;
+              rdfs:domain nvf:AccountingDocument ;
+              rdfs:range xsd:dateTime ;
+              rdfs:label "entry date"@en ;
+              skos:definition "Date the document was actually keyed into the system."@en ;
+              nvf:sourceField "BKPF.CPUDT" .
+
+
+###  https://nordvia.com/ontology/finance#exchangeRate
+nvf:exchangeRate rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain nvf:AccountingDocument ;
+                 rdfs:range xsd:decimal ;
+                 rdfs:label "exchange rate"@en ;
+                 rdfs:seeAlso fibo-cur:ExchangeRate ;
+                 skos:definition "Units of the company's local currency per unit of document currency, as applied when the document was posted."@en ;
+                 nvf:sourceField "BKPF.KURSF" .
+
+
+###  https://nordvia.com/ontology/finance#fieldStatusGroup
+nvf:fieldStatusGroup rdf:type owl:DatatypeProperty ,
+                              owl:FunctionalProperty ;
+                     rdfs:domain nvf:CompanyAccount ;
+                     rdfs:range xsd:string ;
+                     rdfs:label "field status group"@en ;
+                     skos:definition "The SAP rule set saying which fields are required when posting to the account."@en ;
+                     nvf:sourceField "SKB1.FSTAG" .
+
+
+###  https://nordvia.com/ontology/finance#fiscalPeriod
+nvf:fiscalPeriod rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:range xsd:integer ;
+                 rdfs:label "fiscal period"@en ;
+                 skos:definition "Period of the fiscal year, 1 to 12, that a document counts in or that a monthly exchange rate applies to. With variant K4 it equals the calendar month of the posting date."@en ;
+                 nvf:sourceField "BKPF.MONAT" .
+
+
+###  https://nordvia.com/ontology/finance#fiscalYear
+nvf:fiscalYear rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:range xsd:integer ;
+               rdfs:label "fiscal year"@en ;
+               skos:definition "The fiscal year an accounting document belongs to, or that a monthly exchange rate applies to."@en ;
+               nvf:sourceField "BKPF.GJAHR" .
+
+
+###  https://nordvia.com/ontology/finance#fiscalYearVariant
+nvf:fiscalYearVariant rdf:type owl:DatatypeProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:domain nvf:Company ;
+                      rdfs:range xsd:string ;
+                      rdfs:label "fiscal year variant"@en ;
+                      skos:definition "How the fiscal year of a company is cut into periods. K4 means the calendar year with twelve monthly periods."@en ;
+                      nvf:sourceField "T001.PERIV" .
+
+
+###  https://nordvia.com/ontology/finance#flaggedForDeletion
+nvf:flaggedForDeletion rdf:type owl:DatatypeProperty ,
+                                owl:FunctionalProperty ;
+                       rdfs:domain nvf:Customer ;
+                       rdfs:range xsd:boolean ;
+                       rdfs:label "flagged for deletion"@en ;
+                       skos:definition "True when the customer record is marked to be archived and should take no new postings."@en ;
+                       nvf:sourceField "KNA1.LOEVM" .
+
+
+###  https://nordvia.com/ontology/finance#lineItemDisplay
+nvf:lineItemDisplay rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain nvf:CompanyAccount ;
+                    rdfs:range xsd:boolean ;
+                    rdfs:label "line item display"@en ;
+                    skos:definition "True when individual postings on the account can be listed, not just its balance."@en ;
+                    nvf:sourceField "SKB1.XKRES" .
+
+
+###  https://nordvia.com/ontology/finance#lineNumber
+nvf:lineNumber rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain nvf:LineItem ;
+               rdfs:range xsd:integer ;
+               rdfs:label "line number"@en ;
+               skos:definition "Position of a line item within its document, starting at 1."@en ;
+               nvf:sourceField "BSEG.BUZEI" .
+
+
+###  https://nordvia.com/ontology/finance#maxDaysOverdue
+nvf:maxDaysOverdue rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain nvf:DebtAgeBucket ;
+                   rdfs:range xsd:integer ;
+                   rdfs:label "maximum days overdue"@en ;
+                   skos:definition "Most days past the due date for an item to fall in the bucket. Absent on the last bucket, which has no upper limit."@en .
+
+
+###  https://nordvia.com/ontology/finance#minDaysOverdue
+nvf:minDaysOverdue rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain nvf:DebtAgeBucket ;
+                   rdfs:range xsd:integer ;
+                   rdfs:label "minimum days overdue"@en ;
+                   skos:definition "Fewest days past the due date for an item to fall in the bucket. Absent on the bucket for items not yet due."@en .
+
+
+###  https://nordvia.com/ontology/finance#netDays
+nvf:netDays rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain nvf:PaymentTerms ;
+            rdfs:range xsd:integer ;
+            rdfs:label "net days"@en ;
+            skos:definition "Days allowed between the baseline date and the due date."@en .
+
+
+###  https://nordvia.com/ontology/finance#numberRange
+nvf:numberRange rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain nvf:DocumentType ;
+                rdfs:range xsd:string ;
+                rdfs:label "number range"@en ;
+                skos:definition "The interval document numbers of this type are drawn from. It shows as the first two digits of the document number."@en ;
+                nvf:sourceField "T003.NUMKR" .
+
+
+###  https://nordvia.com/ontology/finance#openItemManaged
+nvf:openItemManaged rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain nvf:CompanyAccount ;
+                    rdfs:range xsd:boolean ;
+                    rdfs:label "open item managed"@en ;
+                    skos:definition "True when postings on the account stay open until they are matched and cleared."@en ;
+                    nvf:sourceField "SKB1.XOPVW" .
+
+
+###  https://nordvia.com/ontology/finance#personResponsible
+nvf:personResponsible rdf:type owl:DatatypeProperty ;
+                      rdfs:domain nvf:CostCenter ;
+                      rdfs:range xsd:string ;
+                      rdfs:label "person responsible"@en ;
+                      skos:definition "Name of the manager who answers for the costs of a cost center."@en ;
+                      nvf:sourceField "CSKS.VERAK" .
+
+
+###  https://nordvia.com/ontology/finance#postingBlocked
+nvf:postingBlocked rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain nvf:Payee ;
+                   rdfs:range xsd:boolean ;
+                   rdfs:label "posting blocked"@en ;
+                   skos:definition "True when no new postings may be made to the payee."@en ;
+                   nvf:sourceField "LFA1.SPERR" .
+
+
+###  https://nordvia.com/ontology/finance#postingDate
+nvf:postingDate rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf dcterms:date ;
+                rdf:type owl:FunctionalProperty ;
+                rdfs:domain nvf:AccountingDocument ;
+                rdfs:range xsd:dateTime ;
+                rdfs:label "posting date"@en ;
+                skos:definition "Date the document takes effect in the books. This is the date used for period reporting."@en ;
+                nvf:sourceField "BKPF.BUDAT" .
+
+
+###  https://nordvia.com/ontology/finance#rate
+nvf:rate rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain nvf:MonthlyExchangeRate ;
+         rdfs:range xsd:decimal ;
+         rdfs:label "rate"@en ;
+         rdfs:seeAlso fibo-cur:hasRateValue ;
+         skos:definition "Units of the target currency that one unit of the source currency is worth."@en .
+
+
+###  https://nordvia.com/ontology/finance#reference
+nvf:reference rdf:type owl:DatatypeProperty ;
+              rdfs:domain nvf:AccountingDocument ;
+              rdfs:range xsd:string ;
+              rdfs:label "reference"@en ;
+              skos:definition "Number the document carries outside the system: the vendor's invoice number, or the number of a related document."@en ;
+              skos:scopeNote "Free text. The same reference appearing twice for one vendor is a hint of a duplicate invoice."@en ;
+              nvf:sourceField "BKPF.XBLNR" .
+
+
+###  https://nordvia.com/ontology/finance#taxRate
+nvf:taxRate rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain nvf:TaxCode ;
+            rdfs:range xsd:decimal ;
+            rdfs:label "tax rate"@en ;
+            skos:definition "Rate in percent."@en .
+
+
+###  https://nordvia.com/ontology/finance#validFrom
+nvf:validFrom rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf dcterms:date ;
+              rdf:type owl:FunctionalProperty ;
+              rdfs:domain nvf:CostCenter ;
+              rdfs:range xsd:dateTime ;
+              rdfs:label "valid from"@en ;
+              skos:definition "First day on which a cost center may receive postings."@en ;
+              nvf:sourceField "CSKS.DATAB" .
+
+
+###  https://nordvia.com/ontology/finance#validTo
+nvf:validTo rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf dcterms:date ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain nvf:CostCenter ;
+            rdfs:range xsd:dateTime ;
+            rdfs:label "valid to"@en ;
+            skos:definition "Last day on which a cost center may receive postings."@en ;
+            skos:scopeNote "A cost center with no end date carries 9999-12-31, the convention of the source system. It is kept as it comes so that validity can be checked with a plain date comparison; it is not a real date and must not be used to work out durations."@en ;
+            nvf:sourceField "CSKS.DATBI" .
+
+
+###  https://schema.org/taxID
+schema:taxID rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:string ;
+             skos:definition "The tax identification number of a customer or payee."@en ;
+             skos:scopeNote "Two vendor records sharing a tax ID point to the same real-world supplier."@en ;
+             nvf:sourceField "KNA1.STCD1" ,
+                             "LFA1.STCD1" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+skos:Concept rdf:type owl:Class ;
+             skos:definition "An entry in a controlled list or classification."@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#ConceptScheme
+skos:ConceptScheme rdf:type owl:Class ;
+                   skos:definition "A controlled list or classification taken as a whole."@en .
+
+
+###  http://www.w3.org/ns/locn#Address
+locn:Address rdf:type owl:Class ;
+             skos:definition "A postal address: where a company, customer or payee is located."@en .
+
+
+###  http://www.w3.org/ns/org#FormalOrganization
+org:FormalOrganization rdf:type owl:Class ;
+                       rdfs:subClassOf org:Organization ;
+                       skos:definition "An organisation recognised in law, with rights and obligations of its own."@en .
+
+
+###  http://www.w3.org/ns/org#Organization
+org:Organization rdf:type owl:Class ;
+                 skos:definition "A group of people organised for a common purpose, such as a company or one of its parts."@en .
+
+
+###  http://www.w3.org/ns/org#OrganizationalUnit
+org:OrganizationalUnit rdf:type owl:Class ;
+                       rdfs:subClassOf org:Organization ;
+                       skos:definition "A part of a larger organisation, such as a department, that has no legal standing by itself."@en .
+
+
+###  http://www.w3.org/ns/regorg#RegisteredOrganization
+rov:RegisteredOrganization rdf:type owl:Class ;
+                           rdfs:subClassOf org:FormalOrganization ;
+                           skos:definition "An organisation that became a legal entity by being entered in an official register."@en .
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+foaf:Agent rdf:type owl:Class ;
+           skos:definition "Anything that can act: a person, a company or any other organisation."@en .
+
+
+###  https://nordvia.com/ontology/finance#AccountType
+nvf:AccountType rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Class ;
+                                      owl:oneOf ( nvf:CustomerAccountType
+                                                  nvf:GLAccountType
+                                                  nvf:PayeeAccountType
+                                                )
+                                    ] ;
+                rdfs:label "Account Type"@en ;
+                skos:definition "Whether a posting goes to the customer subledger, the payables subledger or straight to the general ledger."@en .
+
+
+###  https://nordvia.com/ontology/finance#AccountingDocument
+nvf:AccountingDocument rdf:type owl:Class ;
+                       rdfs:label "Accounting Document"@en ;
+                       skos:definition "A balanced set of postings recorded together in the books of one company."@en ;
+                       skos:scopeNote "Identified by company, document number and fiscal year. The external reference is not unique and must not be used as a key."@en ;
+                       nvf:sourceField "BKPF" .
+
+
+###  https://nordvia.com/ontology/finance#BalanceSheetAccount
+nvf:BalanceSheetAccount rdf:type owl:Class ;
+                        rdfs:subClassOf nvf:GLAccount ;
+                        owl:disjointWith nvf:ProfitAndLossAccount ;
+                        rdfs:label "Balance Sheet Account"@en ;
+                        skos:definition "A G/L account whose balance is carried forward: assets, liabilities and equity."@en ;
+                        nvf:sourceField "SKA1.XBILK" .
+
+
+###  https://nordvia.com/ontology/finance#BusinessPartner
+nvf:BusinessPartner rdf:type owl:Class ;
+                    rdfs:subClassOf foaf:Agent ;
+                    rdfs:label "Business Partner"@en ;
+                    skos:definition "A party Nordvia holds an account with, on the sales or the purchasing side."@en .
+
+
+###  https://nordvia.com/ontology/finance#ChartOfAccounts
+nvf:ChartOfAccounts rdf:type owl:Class ;
+                    rdfs:subClassOf skos:ConceptScheme ;
+                    rdfs:label "Chart of Accounts"@en ;
+                    skos:definition "The list of general ledger accounts a company posts to. All Nordvia companies share one chart (NVCA)."@en ;
+                    nvf:sourceField "SKA1.KTOPL" ,
+                                    "T001.KTOPL" .
+
+
+###  https://nordvia.com/ontology/finance#Company
+nvf:Company rdf:type owl:Class ;
+            rdfs:subClassOf rov:RegisteredOrganization ;
+            rdfs:label "Company"@en ;
+            rdfs:seeAlso cmns-org:LegalEntity ;
+            skos:definition "A legal entity of the Nordvia group that keeps its own books and reports in its own local currency."@en ;
+            skos:scopeNote "SAP calls this a company code. There are three: Iberia, US and UK."@en ;
+            nvf:sourceField "T001" .
+
+
+###  https://nordvia.com/ontology/finance#CompanyAccount
+nvf:CompanyAccount rdf:type owl:Class ;
+                   rdfs:label "Company Account"@en ;
+                   skos:definition "The set-up of one G/L account in one company: its currency and the controls that apply when posting to it."@en ;
+                   nvf:sourceField "SKB1" .
+
+
+###  https://nordvia.com/ontology/finance#ControllingArea
+nvf:ControllingArea rdf:type owl:Class ;
+                    rdfs:subClassOf org:Organization ;
+                    rdfs:label "Controlling Area"@en ;
+                    skos:definition "The management accounting scope under which cost centers are maintained. One controlling area can span several companies."@en ;
+                    nvf:sourceField "CSKS.KOKRS" .
+
+
+###  https://nordvia.com/ontology/finance#CostCenter
+nvf:CostCenter rdf:type owl:Class ;
+               rdfs:subClassOf org:OrganizationalUnit ;
+               rdfs:label "Cost Center"@en ;
+               skos:definition "A department, function or store of a company to which costs are charged."@en ;
+               skos:scopeNote "A cost center is only valid between its valid-from and valid-to dates. Postings outside that window are a data quality finding, not a modelling error."@en ;
+               nvf:sourceField "CSKS" .
+
+
+###  https://nordvia.com/ontology/finance#CostCenterCategory
+nvf:CostCenterCategory rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Class ;
+                                             owl:oneOf ( nvf:Administration
+                                                         nvf:Sales
+                                                         nvf:Service
+                                                       )
+                                           ] ;
+                       rdfs:subClassOf skos:Concept ;
+                       rdfs:label "Cost Center Category"@en ;
+                       skos:definition "The kind of activity a cost center carries out."@en ;
+                       nvf:sourceField "CSKS.KOSAR" .
+
+
+###  https://nordvia.com/ontology/finance#CostCenterRequiredAccount
+nvf:CostCenterRequiredAccount rdf:type owl:Class ;
+                              owl:equivalentClass [ owl:intersectionOf ( nvf:CompanyAccount
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty nvf:fieldStatusGroup ;
+                                                                           owl:hasValue "G004"
+                                                                         ]
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ] ;
+                              rdfs:label "Cost Center Required Account"@en ;
+                              skos:definition "A company account on which every posting must name a cost center."@en .
+
+
+###  https://nordvia.com/ontology/finance#CreditLineItem
+nvf:CreditLineItem rdf:type owl:Class ;
+                   owl:equivalentClass [ owl:intersectionOf ( nvf:LineItem
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty nvf:postingSide ;
+                                                                owl:hasValue nvf:Credit
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] ;
+                   owl:disjointWith nvf:DebitLineItem ;
+                   rdfs:label "Credit Line Item"@en ;
+                   skos:definition "A line item posted on the credit side. Its amount counts as negative."@en .
+
+
+###  https://nordvia.com/ontology/finance#Customer
+nvf:Customer rdf:type owl:Class ;
+             rdfs:subClassOf nvf:BusinessPartner ;
+             rdfs:label "Customer"@en ;
+             rdfs:seeAlso fibo-pas:Customer ;
+             skos:definition "A party Nordvia sells to and collects money from."@en ;
+             nvf:sourceField "KNA1" .
+
+
+###  https://nordvia.com/ontology/finance#CustomerCreditMemo
+nvf:CustomerCreditMemo rdf:type owl:Class ;
+                       rdfs:subClassOf nvf:AccountingDocument ;
+                       rdfs:label "Customer Credit Memo"@en ;
+                       skos:definition "A document that reduces what a customer owes, for a return or a price adjustment."@en ;
+                       skos:scopeNote "Document type DG"@en .
+
+
+###  https://nordvia.com/ontology/finance#CustomerInvoice
+nvf:CustomerInvoice rdf:type owl:Class ;
+                    rdfs:subClassOf nvf:Invoice ;
+                    owl:disjointWith nvf:PayableInvoice ;
+                    rdfs:label "Customer Invoice"@en ;
+                    skos:definition "An invoice issued by Nordvia to a customer."@en ;
+                    skos:scopeNote "Document type DR"@en .
+
+
+###  https://nordvia.com/ontology/finance#CustomerPayment
+nvf:CustomerPayment rdf:type owl:Class ;
+                    rdfs:subClassOf nvf:AccountingDocument ;
+                    rdfs:label "Customer Payment"@en ;
+                    skos:definition "Money received from a customer."@en ;
+                    skos:scopeNote "Document type DZ"@en .
+
+
+###  https://nordvia.com/ontology/finance#DebitCreditIndicator
+nvf:DebitCreditIndicator rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Class ;
+                                               owl:oneOf ( nvf:Credit
+                                                           nvf:Debit
+                                                         )
+                                             ] ;
+                         rdfs:label "Debit/Credit Indicator"@en ;
+                         skos:definition "The side of the ledger a posting falls on."@en ;
+                         skos:scopeNote "Amounts are stored unsigned; this indicator carries the sign."@en .
+
+
+###  https://nordvia.com/ontology/finance#DebitLineItem
+nvf:DebitLineItem rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( nvf:LineItem
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty nvf:postingSide ;
+                                                               owl:hasValue nvf:Debit
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  rdfs:label "Debit Line Item"@en ;
+                  skos:definition "A line item posted on the debit side. Its amount counts as positive."@en .
+
+
+###  https://nordvia.com/ontology/finance#DebtAgeBucket
+nvf:DebtAgeBucket rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Class ;
+                                        owl:oneOf ( nvf:NotYetDue
+                                                    nvf:Overdue1To30
+                                                    nvf:Overdue31To60
+                                                    nvf:Overdue61To90
+                                                    nvf:OverdueOver90
+                                                  )
+                                      ] ;
+                  rdfs:subClassOf skos:Concept ;
+                  rdfs:label "Debt Age Bucket"@en ;
+                  skos:definition "A range of days overdue used to group open items by how old the debt is."@en ;
+                  skos:scopeNote "Days overdue run from the due date of the item to the key date of the report. The buckets do not overlap and together cover every case."@en .
+
+
+###  https://nordvia.com/ontology/finance#DocumentType
+nvf:DocumentType rdf:type owl:Class ;
+                 rdfs:subClassOf skos:Concept ;
+                 rdfs:label "Document Type"@en ;
+                 skos:definition "The SAP classification of an accounting document, which also decides its number range."@en ;
+                 nvf:sourceField "T003" .
+
+
+###  https://nordvia.com/ontology/finance#DomesticCustomer
+nvf:DomesticCustomer rdf:type owl:Class ;
+                     rdfs:subClassOf nvf:Customer ;
+                     rdfs:label "Domestic Customer"@en ;
+                     skos:definition "A customer established in the same country as the Nordvia company that sells to it."@en ;
+                     skos:scopeNote "Account group KUNA"@en ;
+                     nvf:sourceField "KNA1.KTOKD" .
+
+
+###  https://nordvia.com/ontology/finance#Employee
+nvf:Employee rdf:type owl:Class ;
+             rdfs:subClassOf nvf:Payee ;
+             owl:disjointWith nvf:Vendor ;
+             rdfs:label "Employee"@en ;
+             rdfs:seeAlso fibo-fm:Employee ;
+             skos:definition "A member of Nordvia staff who is paid through the payables ledger, in practice to be reimbursed for travel expenses."@en ;
+             skos:scopeNote "Account group EMPL. An employee is not a vendor: what they submit is an expense claim, not a purchase. The extract does not say which company employs the person."@en ;
+             nvf:sourceField "LFA1.KTOKK" .
+
+
+###  https://nordvia.com/ontology/finance#ForeignCustomer
+nvf:ForeignCustomer rdf:type owl:Class ;
+                    rdfs:subClassOf nvf:Customer ;
+                    rdfs:label "Foreign Customer"@en ;
+                    skos:definition "A customer established in a different country from the Nordvia company that sells to it."@en ;
+                    skos:scopeNote "Account group KUNX"@en ;
+                    nvf:sourceField "KNA1.KTOKD" .
+
+
+###  https://nordvia.com/ontology/finance#GLAccount
+nvf:GLAccount rdf:type owl:Class ;
+              rdfs:subClassOf skos:Concept ;
+              rdfs:label "General Ledger Account"@en ;
+              skos:altLabel "G/L Account"@en ;
+              skos:definition "A general ledger account as defined in the chart of accounts, independent of any company."@en ;
+              nvf:sourceField "SKA1" ,
+                              "SKAT" .
+
+
+###  https://nordvia.com/ontology/finance#GLDocument
+nvf:GLDocument rdf:type owl:Class ;
+               rdfs:subClassOf nvf:AccountingDocument ;
+               rdfs:label "General Ledger Document"@en ;
+               skos:altLabel "G/L Document"@en ;
+               skos:definition "A posting made directly in the general ledger: payroll, depreciation, accruals."@en ;
+               skos:scopeNote "Document type SA"@en .
+
+
+###  https://nordvia.com/ontology/finance#InputTaxCode
+nvf:InputTaxCode rdf:type owl:Class ;
+                 rdfs:subClassOf nvf:TaxCode ;
+                 owl:disjointWith nvf:OutputTaxCode ;
+                 rdfs:label "Input Tax Code"@en ;
+                 skos:definition "Tax paid to vendors on purchases."@en .
+
+
+###  https://nordvia.com/ontology/finance#Invoice
+nvf:Invoice rdf:type owl:Class ;
+            rdfs:subClassOf nvf:AccountingDocument ,
+                            schema:Invoice ;
+            rdfs:label "Invoice"@en ;
+            skos:definition "A document that records an amount owed for goods or services."@en .
+
+
+###  https://nordvia.com/ontology/finance#LineItem
+nvf:LineItem rdf:type owl:Class ;
+             rdfs:label "Line Item"@en ;
+             skos:definition "One debit or credit posting inside an accounting document."@en ;
+             skos:scopeNote "A customer or payee line with no clearing document is an open item. Openness is the absence of a link, so it is asked for in the query rather than stated as a class."@en ;
+             nvf:sourceField "BSEG" .
+
+
+###  https://nordvia.com/ontology/finance#MonthlyExchangeRate
+nvf:MonthlyExchangeRate rdf:type owl:Class ;
+                        rdfs:label "Monthly Exchange Rate"@en ;
+                        rdfs:seeAlso fibo-cur:ExchangeRate ;
+                        skos:definition "The rate used to convert amounts from a local currency into euros for one fiscal period."@en ;
+                        skos:scopeNote "The source has no rate table. Each rate is rebuilt from the exchange rates on the foreign-currency documents posted in the period, and records the method used so the conversion can be checked."@en .
+
+
+###  https://nordvia.com/ontology/finance#OneTimeCustomer
+nvf:OneTimeCustomer rdf:type owl:Class ;
+                    rdfs:subClassOf nvf:Customer ;
+                    rdfs:label "One-Time Customer"@en ;
+                    skos:definition "A collective account used for occasional buyers who do not get a master record of their own."@en ;
+                    skos:scopeNote "Account group CPD. Balances on these accounts cannot be attributed to an individual customer."@en ;
+                    nvf:sourceField "KNA1.KTOKD" .
+
+
+###  https://nordvia.com/ontology/finance#OpeningBalanceDocument
+nvf:OpeningBalanceDocument rdf:type owl:Class ;
+                           rdfs:subClassOf nvf:GLDocument ;
+                           rdfs:label "Opening Balance Document"@en ;
+                           skos:definition "The document that brought the balances carried forward from the previous year into the books of a company."@en ;
+                           skos:scopeNote "One per company, posted on the first day of the year by the migration user. It holds balances, not activity of the year, so it counts for balance sheet figures and is left out when measuring what happened in the year."@en .
+
+
+###  https://nordvia.com/ontology/finance#OutgoingPayment
+nvf:OutgoingPayment rdf:type owl:Class ;
+                    rdfs:subClassOf nvf:AccountingDocument ;
+                    rdfs:label "Outgoing Payment"@en ;
+                    skos:definition "Money paid out to a payee."@en ;
+                    skos:scopeNote "Document type KZ"@en .
+
+
+###  https://nordvia.com/ontology/finance#OutputTaxCode
+nvf:OutputTaxCode rdf:type owl:Class ;
+                  rdfs:subClassOf nvf:TaxCode ;
+                  rdfs:label "Output Tax Code"@en ;
+                  skos:definition "Tax charged to customers on sales."@en .
+
+
+###  https://nordvia.com/ontology/finance#PayableInvoice
+nvf:PayableInvoice rdf:type owl:Class ;
+                   rdfs:subClassOf nvf:Invoice ;
+                   rdfs:label "Payable Invoice"@en ;
+                   skos:definition "A document recording an amount Nordvia owes to a payee: an invoice from a vendor or an expense claim from an employee."@en ;
+                   skos:scopeNote "Document type KR"@en .
+
+
+###  https://nordvia.com/ontology/finance#PayablesAccount
+nvf:PayablesAccount rdf:type owl:Class ;
+                    rdfs:subClassOf nvf:ReconciliationAccount ;
+                    owl:disjointWith nvf:ReceivablesAccount ;
+                    rdfs:label "Payables Account"@en ;
+                    skos:definition "Reconciliation account for payees."@en ;
+                    skos:scopeNote "MITKZ = K"@en .
+
+
+###  https://nordvia.com/ontology/finance#Payee
+nvf:Payee rdf:type owl:Class ;
+          rdfs:subClassOf nvf:BusinessPartner ;
+          rdfs:label "Payee"@en ;
+          rdfs:seeAlso fibo-psch:Payee ;
+          skos:definition "A party Nordvia owes or pays money to. It is either a vendor or an employee."@en ;
+          skos:scopeNote "SAP keeps all payees in what it calls the vendor master, which is why employees appear there next to real vendors."@en ;
+          nvf:sourceField "LFA1" .
+
+
+###  https://nordvia.com/ontology/finance#PaymentTerms
+nvf:PaymentTerms rdf:type owl:Class ;
+                 rdfs:subClassOf skos:Concept ;
+                 rdfs:label "Payment Terms"@en ;
+                 skos:definition "The agreed number of days between the baseline date and the date payment falls due."@en ;
+                 nvf:sourceField "BSEG.ZTERM" ,
+                                 "KNA1.ZTERM" ,
+                                 "LFA1.ZTERM" .
+
+
+###  https://nordvia.com/ontology/finance#PostingKey
+nvf:PostingKey rdf:type owl:Class ;
+               rdfs:subClassOf skos:Concept ;
+               rdfs:label "Posting Key"@en ;
+               skos:definition "A two-digit key that fixes the side (debit or credit) and the kind of account a line is posted to."@en ;
+               nvf:sourceField "TBSL" .
+
+
+###  https://nordvia.com/ontology/finance#ProfitAndLossAccount
+nvf:ProfitAndLossAccount rdf:type owl:Class ;
+                         rdfs:subClassOf nvf:GLAccount ;
+                         rdfs:label "Profit and Loss Account"@en ;
+                         skos:definition "A G/L account that collects revenue or expense for the period."@en ;
+                         skos:scopeNote "The extract has no field separating revenue from expense accounts. Net result is the sum of credits minus debits over these accounts."@en ;
+                         nvf:sourceField "SKA1.GVTYP" .
+
+
+###  https://nordvia.com/ontology/finance#RateDerivationMethod
+nvf:RateDerivationMethod rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Class ;
+                                               owl:oneOf ( nvf:CrossRate
+                                                           nvf:DirectRate
+                                                           nvf:InverseRate
+                                                         )
+                                             ] ;
+                         rdfs:subClassOf skos:Concept ;
+                         rdfs:label "Rate Derivation Method"@en ;
+                         skos:definition "A way of obtaining a monthly exchange rate from the documents available."@en .
+
+
+###  https://nordvia.com/ontology/finance#ReceivablesAccount
+nvf:ReceivablesAccount rdf:type owl:Class ;
+                       rdfs:subClassOf nvf:ReconciliationAccount ;
+                       rdfs:label "Receivables Account"@en ;
+                       skos:definition "Reconciliation account for customers."@en ;
+                       skos:scopeNote "MITKZ = D"@en .
+
+
+###  https://nordvia.com/ontology/finance#ReconciliationAccount
+nvf:ReconciliationAccount rdf:type owl:Class ;
+                          rdfs:subClassOf nvf:CompanyAccount ;
+                          rdfs:label "Reconciliation Account"@en ;
+                          skos:definition "A company account that mirrors a subledger in the general ledger. It is never posted to directly."@en ;
+                          nvf:sourceField "SKB1.MITKZ" .
+
+
+###  https://nordvia.com/ontology/finance#ReversalDocument
+nvf:ReversalDocument rdf:type owl:Class ;
+                     rdfs:subClassOf nvf:AccountingDocument ;
+                     rdfs:label "Reversal Document"@en ;
+                     skos:definition "A document posted to cancel an earlier one by repeating its lines with the opposite sign."@en ;
+                     skos:scopeNote "Document type AB"@en .
+
+
+###  https://nordvia.com/ontology/finance#ReversedDocument
+nvf:ReversedDocument rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( nvf:AccountingDocument
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty nvf:reversedBy ;
+                                                                  owl:someValuesFrom nvf:ReversalDocument
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
+                     rdfs:label "Reversed Document"@en ;
+                     skos:definition "A document that has been cancelled by a reversal. It stays in the books but nets to zero with its reversal."@en .
+
+
+###  https://nordvia.com/ontology/finance#TaxCode
+nvf:TaxCode rdf:type owl:Class ;
+            rdfs:subClassOf skos:Concept ;
+            rdfs:label "Tax Code"@en ;
+            skos:definition "The VAT treatment applied to a line."@en ;
+            nvf:sourceField "BSEG.MWSKZ" .
+
+
+###  https://nordvia.com/ontology/finance#UnregisteredCustomer
+nvf:UnregisteredCustomer rdf:type owl:Class ;
+                         rdfs:subClassOf nvf:Customer ;
+                         rdfs:label "Unregistered Customer"@en ;
+                         skos:definition "A customer number that appears on postings but has no record in the customer master."@en ;
+                         skos:scopeNote "Created from the line items so that its receivables are not lost. Only the customer number is known: no name, address, account group or payment terms."@en ;
+                         nvf:sourceField "BSEG.KUNNR" .
+
+
+###  https://nordvia.com/ontology/finance#Vendor
+nvf:Vendor rdf:type owl:Class ;
+           rdfs:subClassOf nvf:Payee ;
+           rdfs:label "Vendor"@en ;
+           rdfs:seeAlso fibo-pas:Supplier ;
+           skos:altLabel "Supplier"@en ;
+           skos:definition "An external company that supplies goods or services to Nordvia and invoices for them."@en ;
+           skos:scopeNote "Account group LIEF"@en ;
+           nvf:sourceField "LFA1.KTOKK" .
+
+
+###  https://schema.org/Invoice
+schema:Invoice rdf:type owl:Class ;
+               skos:definition "A statement of money due for goods or services."@en .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/Currency
+fibo-cur:Currency rdf:type owl:Class ;
+                  rdfs:isDefinedBy fibo-cur: ;
+                  rdfs:label "currency"@en ;
+                  skos:definition "A medium of exchange issued by a monetary authority, identified by its ISO 4217 code."@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://nordvia.com/ontology/finance
+<https://nordvia.com/ontology/finance> rdf:type owl:NamedIndividual .
+
+
+###  https://nordvia.com/ontology/finance#Administration
+nvf:Administration rdf:type owl:NamedIndividual ,
+                            nvf:CostCenterCategory ;
+                   skos:notation "V" ;
+                   rdfs:label "Administration"@en ;
+                   skos:definition "Cost centers for general management and back-office functions."@en .
+
+
+###  https://nordvia.com/ontology/finance#Credit
+nvf:Credit rdf:type owl:NamedIndividual ,
+                    nvf:DebitCreditIndicator ;
+           owl:differentFrom nvf:Debit ;
+           skos:notation "H" ;
+           rdfs:label "Credit"@en ;
+           skos:definition "The right-hand side of an account. Increases liabilities, equity and revenue."@en .
+
+
+###  https://nordvia.com/ontology/finance#CrossRate
+nvf:CrossRate rdf:type owl:NamedIndividual ,
+                       nvf:RateDerivationMethod ;
+              rdfs:label "Cross rate"@en ;
+              skos:definition "Obtained through a third currency, for a period in which no document links the local currency and the euro."@en .
+
+
+###  https://nordvia.com/ontology/finance#CustomerAccountType
+nvf:CustomerAccountType rdf:type owl:NamedIndividual ,
+                                 nvf:AccountType ;
+                        skos:notation "D" ;
+                        rdfs:label "Customer account"@en ;
+                        skos:definition "The line is posted to a customer account in the receivables subledger."@en .
+
+
+###  https://nordvia.com/ontology/finance#Debit
+nvf:Debit rdf:type owl:NamedIndividual ,
+                   nvf:DebitCreditIndicator ;
+          skos:notation "S" ;
+          rdfs:label "Debit"@en ;
+          skos:definition "The left-hand side of an account. Increases assets and expenses."@en .
+
+
+###  https://nordvia.com/ontology/finance#DirectRate
+nvf:DirectRate rdf:type owl:NamedIndividual ,
+                        nvf:RateDerivationMethod ;
+               rdfs:label "Direct rate"@en ;
+               skos:definition "Average of the rates on documents posted in the local currency's own direction: documents in that currency, booked by a company that keeps its books in euros."@en .
+
+
+###  https://nordvia.com/ontology/finance#GLAccountType
+nvf:GLAccountType rdf:type owl:NamedIndividual ,
+                           nvf:AccountType ;
+                  skos:notation "S" ;
+                  rdfs:label "General ledger account"@en ;
+                  skos:definition "The line is posted straight to a general ledger account."@en .
+
+
+###  https://nordvia.com/ontology/finance#InverseRate
+nvf:InverseRate rdf:type owl:NamedIndividual ,
+                         nvf:RateDerivationMethod ;
+                rdfs:label "Inverse rate"@en ;
+                skos:definition "One divided by the average rate on euro documents booked by a company that keeps its books in the local currency."@en .
+
+
+###  https://nordvia.com/ontology/finance#NotYetDue
+nvf:NotYetDue rdf:type owl:NamedIndividual ,
+                       nvf:DebtAgeBucket ;
+              nvf:maxDaysOverdue 0 ;
+              rdfs:label "Not yet due"@en ;
+              skos:definition "Open items whose due date is on or after the key date."@en .
+
+
+###  https://nordvia.com/ontology/finance#Overdue1To30
+nvf:Overdue1To30 rdf:type owl:NamedIndividual ,
+                          nvf:DebtAgeBucket ;
+                 nvf:maxDaysOverdue 30 ;
+                 nvf:minDaysOverdue 1 ;
+                 rdfs:label "1-30 days overdue"@en ;
+                 skos:definition "Open items between 1 and 30 days past their due date."@en .
+
+
+###  https://nordvia.com/ontology/finance#Overdue31To60
+nvf:Overdue31To60 rdf:type owl:NamedIndividual ,
+                           nvf:DebtAgeBucket ;
+                  nvf:maxDaysOverdue 60 ;
+                  nvf:minDaysOverdue 31 ;
+                  rdfs:label "31-60 days overdue"@en ;
+                  skos:definition "Open items between 31 and 60 days past their due date."@en .
+
+
+###  https://nordvia.com/ontology/finance#Overdue61To90
+nvf:Overdue61To90 rdf:type owl:NamedIndividual ,
+                           nvf:DebtAgeBucket ;
+                  nvf:maxDaysOverdue 90 ;
+                  nvf:minDaysOverdue 61 ;
+                  rdfs:label "61-90 days overdue"@en ;
+                  skos:definition "Open items between 61 and 90 days past their due date."@en .
+
+
+###  https://nordvia.com/ontology/finance#OverdueOver90
+nvf:OverdueOver90 rdf:type owl:NamedIndividual ,
+                           nvf:DebtAgeBucket ;
+                  nvf:minDaysOverdue 91 ;
+                  rdfs:label "Over 90 days overdue"@en ;
+                  skos:definition "Open items more than 90 days past their due date."@en .
+
+
+###  https://nordvia.com/ontology/finance#PT_0001
+nvf:PT_0001 rdf:type owl:NamedIndividual ,
+                     nvf:PaymentTerms ;
+            skos:notation "0001" ;
+            nvf:netDays 0 ;
+            rdfs:label "Payable immediately"@en ;
+            skos:definition "Payment is due on the baseline date itself."@en .
+
+
+###  https://nordvia.com/ontology/finance#PT_NT15
+nvf:PT_NT15 rdf:type owl:NamedIndividual ,
+                     nvf:PaymentTerms ;
+            skos:notation "NT15" ;
+            nvf:netDays 15 ;
+            rdfs:label "Net 15 days"@en ;
+            skos:definition "Payment is due 15 days after the baseline date, with no discount."@en .
+
+
+###  https://nordvia.com/ontology/finance#PT_NT30
+nvf:PT_NT30 rdf:type owl:NamedIndividual ,
+                     nvf:PaymentTerms ;
+            skos:notation "NT30" ;
+            nvf:netDays 30 ;
+            rdfs:label "Net 30 days"@en ;
+            skos:definition "Payment is due 30 days after the baseline date, with no discount."@en .
+
+
+###  https://nordvia.com/ontology/finance#PT_NT45
+nvf:PT_NT45 rdf:type owl:NamedIndividual ,
+                     nvf:PaymentTerms ;
+            skos:notation "NT45" ;
+            nvf:netDays 45 ;
+            rdfs:label "Net 45 days"@en ;
+            skos:definition "Payment is due 45 days after the baseline date, with no discount."@en .
+
+
+###  https://nordvia.com/ontology/finance#PT_NT60
+nvf:PT_NT60 rdf:type owl:NamedIndividual ,
+                     nvf:PaymentTerms ;
+            skos:notation "NT60" ;
+            nvf:netDays 60 ;
+            rdfs:label "Net 60 days"@en ;
+            skos:definition "Payment is due 60 days after the baseline date, with no discount."@en .
+
+
+###  https://nordvia.com/ontology/finance#PayeeAccountType
+nvf:PayeeAccountType rdf:type owl:NamedIndividual ,
+                              nvf:AccountType ;
+                     skos:notation "K" ;
+                     rdfs:label "Payee account"@en ;
+                     skos:definition "The line is posted to a payee account in the payables subledger."@en .
+
+
+###  https://nordvia.com/ontology/finance#Sales
+nvf:Sales rdf:type owl:NamedIndividual ,
+                   nvf:CostCenterCategory ;
+          skos:notation "W" ;
+          rdfs:label "Sales"@en ;
+          skos:definition "Cost centers that sell: marketing, the sales team and the stores."@en .
+
+
+###  https://nordvia.com/ontology/finance#Service
+nvf:Service rdf:type owl:NamedIndividual ,
+                     nvf:CostCenterCategory ;
+            skos:notation "H" ;
+            rdfs:label "Service"@en ;
+            skos:definition "Cost centers that provide internal services to the rest of the company, such as IT or logistics."@en .
+
+
+###  https://nordvia.com/ontology/finance#Tax_A0
+nvf:Tax_A0 rdf:type owl:NamedIndividual ,
+                    nvf:OutputTaxCode ;
+           skos:notation "A0" ;
+           nvf:taxRate 0.0 ;
+           rdfs:label "Output tax exempt / 0%"@en ;
+           skos:definition "Sales that are exempt or taxed at 0%."@en .
+
+
+###  https://nordvia.com/ontology/finance#Tax_A1
+nvf:Tax_A1 rdf:type owl:NamedIndividual ,
+                    nvf:OutputTaxCode ;
+           skos:notation "A1" ;
+           nvf:taxRate 21.0 ;
+           rdfs:label "Output VAT 21% (ES)"@en ;
+           skos:definition "Spanish VAT at the standard 21% rate charged on sales."@en .
+
+
+###  https://nordvia.com/ontology/finance#Tax_A2
+nvf:Tax_A2 rdf:type owl:NamedIndividual ,
+                    nvf:OutputTaxCode ;
+           skos:notation "A2" ;
+           nvf:taxRate 20.0 ;
+           rdfs:label "Output VAT 20% (UK)"@en ;
+           skos:definition "UK VAT at the standard 20% rate charged on sales."@en .
+
+
+###  https://nordvia.com/ontology/finance#Tax_V0
+nvf:Tax_V0 rdf:type owl:NamedIndividual ,
+                    nvf:InputTaxCode ;
+           skos:notation "V0" ;
+           nvf:taxRate 0.0 ;
+           rdfs:label "Input tax exempt / 0%"@en ;
+           skos:definition "Purchases that are exempt or taxed at 0%."@en .
+
+
+###  https://nordvia.com/ontology/finance#Tax_V1
+nvf:Tax_V1 rdf:type owl:NamedIndividual ,
+                    nvf:InputTaxCode ;
+           skos:notation "V1" ;
+           nvf:taxRate 21.0 ;
+           rdfs:label "Input VAT 21% (ES)"@en ;
+           skos:definition "Spanish VAT at the standard 21% rate paid on purchases."@en .
+
+
+###  https://nordvia.com/ontology/finance#Tax_V2
+nvf:Tax_V2 rdf:type owl:NamedIndividual ,
+                    nvf:InputTaxCode ;
+           skos:notation "V2" ;
+           nvf:taxRate 20.0 ;
+           rdfs:label "Input VAT 20% (UK)"@en ;
+           skos:definition "UK VAT at the standard 20% rate paid on purchases."@en .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/Euro
+fibo-4217:Euro rdf:type owl:NamedIndividual ,
+                        fibo-cur:Currency ;
+               skos:notation "EUR" ;
+               rdfs:label "Euro"@en ;
+               skos:definition "The currency of the euro area."@en ;
+               skos:scopeNote "Local currency of Nordvia Retail Iberia and the group reporting currency."@en .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/PoundSterling
+fibo-4217:PoundSterling rdf:type owl:NamedIndividual ,
+                                 fibo-cur:Currency ;
+                        skos:notation "GBP" ;
+                        rdfs:label "Pound Sterling"@en ;
+                        skos:definition "The currency of the United Kingdom."@en ;
+                        skos:scopeNote "Local currency of Nordvia Retail UK."@en .
+
+
+###  https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/USDollar
+fibo-4217:USDollar rdf:type owl:NamedIndividual ,
+                            fibo-cur:Currency ;
+                   skos:notation "USD" ;
+                   rdfs:label "US Dollar"@en ;
+                   skos:definition "The currency of the United States."@en ;
+                   skos:scopeNote "Local currency of Nordvia Retail US."@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( nvf:CustomerCreditMemo
+                nvf:CustomerPayment
+                nvf:GLDocument
+                nvf:Invoice
+                nvf:OutgoingPayment
+                nvf:ReversalDocument
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( nvf:DomesticCustomer
+                nvf:ForeignCustomer
+                nvf:OneTimeCustomer
+                nvf:UnregisteredCustomer
+              )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( nvf:Administration
+                        nvf:Sales
+                        nvf:Service
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( nvf:CrossRate
+                        nvf:DirectRate
+                        nvf:InverseRate
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( nvf:CustomerAccountType
+                        nvf:GLAccountType
+                        nvf:PayeeAccountType
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( nvf:NotYetDue
+                        nvf:Overdue1To30
+                        nvf:Overdue31To60
+                        nvf:Overdue61To90
+                        nvf:OverdueOver90
+                      )
+] .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

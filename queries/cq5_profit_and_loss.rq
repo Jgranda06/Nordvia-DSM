@@ -1,0 +1,53 @@
+# CQ5 - What is the profit and loss (revenue - expenses) per company code and month?
+#
+# Scope    : lines posted to profit and loss accounts. Credits add to the result,
+#            debits take away from it.
+# Revenue  : the source has no field that separates revenue accounts from expense accounts.
+#            An account counts as revenue when its balance over the whole year is a credit
+#            (sales and exchange-rate gains), and as expense otherwise.
+# Month    : the fiscal period of the document, which equals the month of its posting date.
+# Reversal documents and the documents they reverse are left out, so an amount posted in
+# one month and cancelled in the next appears in neither.
+# Amounts in the local currency of the company; the result also in euros.
+
+PREFIX nvf:     <https://nordvia.com/ontology/finance#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT ?company ?month ?currency
+       (SUM(IF(?isRevenue, ?signed, 0)) AS ?revenue)
+       (SUM(IF(?isRevenue, 0, -?signed)) AS ?expenses)
+       (SUM(?signed) AS ?result)
+       (SUM(?signedEur) AS ?resultEur)
+WHERE {
+  ?line nvf:lineItemOf ?document ;
+        nvf:glAccount ?account ;
+        nvf:postingSide ?side ;
+        nvf:amountInLocalCurrency ?local ;
+        nvf:amountInGroupCurrency ?euros .
+  ?account a nvf:ProfitAndLossAccount .
+  ?document nvf:inCompany ?co ;
+            nvf:fiscalPeriod ?month .
+  FILTER NOT EXISTS { ?document a nvf:ReversalDocument }
+  FILTER NOT EXISTS { ?document a nvf:ReversedDocument }
+
+  ?co dcterms:identifier ?company ;
+      nvf:localCurrency/skos:notation ?currency .
+
+  BIND (IF(?side = nvf:Credit, ?local, -?local) AS ?signed)
+  BIND (IF(?side = nvf:Credit, ?euros, -?euros) AS ?signedEur)
+
+  # revenue account = credit balance over the year
+  {
+    SELECT ?account (SUM(IF(?s = nvf:Credit, ?v, -?v)) >= 0 AS ?isRevenue)
+    WHERE {
+      ?account a nvf:ProfitAndLossAccount .
+      ?l nvf:glAccount ?account ;
+         nvf:postingSide ?s ;
+         nvf:amountInGroupCurrency ?v .
+    }
+    GROUP BY ?account
+  }
+}
+GROUP BY ?company ?month ?currency
+ORDER BY ?company ?month

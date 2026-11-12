@@ -1,0 +1,5 @@
+# Versions the notebooks were run with (Python 3.12 / 3.13)
+morph-kgc==2.10.0
+rdflib==7.2.1
+pyoxigraph==0.3.22
+pandas==2.3.3

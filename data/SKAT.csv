@@ -1,0 +1,56 @@
+SPRAS,KTOPL,SAKNR,TXT20,TXT50
+E,NVCA,0000100000,Petty cash,Petty cash
+S,NVCA,0000100000,Caja,Caja
+E,NVCA,0000113100,Bank - main account,Bank - main account
+S,NVCA,0000113100,Banco - cuenta princ,Banco - cuenta principal
+E,NVCA,0000140000,Trade receivables,Trade receivables
+S,NVCA,0000140000,Clientes,Clientes
+E,NVCA,0000154000,Input VAT,Input VAT
+S,NVCA,0000154000,IVA soportado,IVA soportado
+E,NVCA,0000160000,Trade payables,Trade payables
+S,NVCA,0000160000,Proveedores,Proveedores
+E,NVCA,0000175000,Output VAT,Output VAT
+S,NVCA,0000175000,IVA repercutido,IVA repercutido
+E,NVCA,0000200000,Fixed assets - equip,Fixed assets - equipment
+S,NVCA,0000200000,Inmovilizado - equip,Inmovilizado - equipos
+E,NVCA,0000210000,Accumulated deprecia,Accumulated depreciation
+S,NVCA,0000210000,Amortización acumula,Amortización acumulada
+E,NVCA,0000230000,Payroll payable,Payroll payable
+S,NVCA,0000230000,Remuneraciones pendi,Remuneraciones pendientes de pago
+E,NVCA,0000290000,Retained earnings,Retained earnings
+S,NVCA,0000290000,Resultados acumulado,Resultados acumulados
+E,NVCA,0000400000,Cost of goods sold,Cost of goods sold
+S,NVCA,0000400000,Coste de ventas,Coste de ventas
+E,NVCA,0000410000,Salaries and wages,Salaries and wages
+S,NVCA,0000410000,Sueldos y salarios,Sueldos y salarios
+E,NVCA,0000411000,Social security,Social security
+S,NVCA,0000411000,Seguridad social,Seguridad social
+E,NVCA,0000420000,Rent,Rent
+S,NVCA,0000420000,Arrendamientos,Arrendamientos
+E,NVCA,0000421000,Utilities,Utilities
+S,NVCA,0000421000,Suministros,Suministros
+E,NVCA,0000430000,IT services,IT services
+S,NVCA,0000430000,Servicios informátic,Servicios informáticos
+E,NVCA,0000431000,Consulting fees,Consulting fees
+S,NVCA,0000431000,Honorarios de consul,Honorarios de consultoría
+E,NVCA,0000440000,Travel expenses,Travel expenses
+S,NVCA,0000440000,Gastos de viaje,Gastos de viaje
+E,NVCA,0000441000,Marketing,Marketing
+S,NVCA,0000441000,Marketing y publicid,Marketing y publicidad
+E,NVCA,0000450000,Depreciation expense,Depreciation expense
+S,NVCA,0000450000,Gasto por amortizaci,Gasto por amortización
+E,NVCA,0000460000,Bank fees,Bank fees
+S,NVCA,0000460000,Comisiones bancarias,Comisiones bancarias
+E,NVCA,0000470000,Office supplies,Office supplies
+S,NVCA,0000470000,Material de oficina,Material de oficina
+E,NVCA,0000480000,FX gains,FX gains
+S,NVCA,0000480000,Diferencias positiva,Diferencias positivas de cambio
+E,NVCA,0000481000,FX losses,FX losses
+S,NVCA,0000481000,Diferencias negativa,Diferencias negativas de cambio
+E,NVCA,0000499000,Miscellaneous expens,Miscellaneous expense
+E,NVCA,0000800000,Revenue - goods,Revenue - goods
+S,NVCA,0000800000,Ventas de mercadería,Ventas de mercaderías
+E,NVCA,0000800100,Revenue - services,Revenue - services
+S,NVCA,0000800100,Prestación de servic,Prestación de servicios
+E,NVCA,0000455000,Impairment losses,Impairment losses on assets
+S,NVCA,0000455000,Deterioro de valor,Pérdidas por deterioro de activos

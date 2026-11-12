@@ -1,0 +1,44 @@
+# CQ4 - On average, how long do customers take to pay compared with their payment terms?
+#
+# Invoices     : customer invoice lines cleared by a customer payment. An invoice cleared by
+#                its own reversal was cancelled, not paid, and is left out by that condition.
+# Days to pay  : from the baseline date of the invoice to the clearing date (the payment).
+# Terms        : the net days of the payment terms on the invoice line, which always match
+#                the terms agreed with the customer in its master record.
+# Days late    : days to pay minus net days; negative means paid before it was due.
+
+PREFIX nvf:  <https://nordvia.com/ontology/finance#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?paymentTerms ?termsName ?netDays
+       (COUNT(?line) AS ?invoicesPaid)
+       (AVG(?daysToPay) AS ?avgDaysToPay)
+       (AVG(?daysToPay - ?netDays) AS ?avgDaysLate)
+       (SUM(IF(?daysToPay > ?netDays, 1, 0)) AS ?paidLate)
+WHERE {
+  ?line nvf:customer ?customer ;
+        nvf:lineItemOf ?invoice ;
+        nvf:paymentTerms ?terms ;
+        nvf:baselineDate ?baseline ;
+        nvf:clearingDate ?paid ;
+        nvf:clearedBy ?payment .
+  ?invoice a nvf:CustomerInvoice .
+  ?payment a nvf:CustomerPayment .
+  ?terms skos:notation ?paymentTerms ;
+         rdfs:label ?termsName ;
+         nvf:netDays ?netDays .
+
+  # days to pay = day number of the payment - day number of the baseline date
+  BIND (FLOOR((14 - MONTH(?baseline)) / 12) AS ?a1)
+  BIND (YEAR(?baseline) + 4800 - ?a1 AS ?y1)
+  BIND (MONTH(?baseline) + 12 * ?a1 - 3 AS ?m1)
+  BIND (DAY(?baseline) + FLOOR((153 * ?m1 + 2) / 5) + 365 * ?y1 + FLOOR(?y1 / 4) - FLOOR(?y1 / 100) + FLOOR(?y1 / 400) AS ?baselineDay)
+  BIND (FLOOR((14 - MONTH(?paid)) / 12) AS ?a2)
+  BIND (YEAR(?paid) + 4800 - ?a2 AS ?y2)
+  BIND (MONTH(?paid) + 12 * ?a2 - 3 AS ?m2)
+  BIND (DAY(?paid) + FLOOR((153 * ?m2 + 2) / 5) + 365 * ?y2 + FLOOR(?y2 / 4) - FLOOR(?y2 / 100) + FLOOR(?y2 / 400) AS ?paidDay)
+  BIND (?paidDay - ?baselineDay AS ?daysToPay)
+}
+GROUP BY ?paymentTerms ?termsName ?netDays
+ORDER BY ?netDays
